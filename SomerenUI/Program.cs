@@ -9,7 +9,7 @@ namespace SomerenUI
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        //
+       
         //example
         
         static void Main()
