@@ -7,6 +7,14 @@ namespace SomerenModel
         public int Id { get; set; }     // database id
         public string Name { get; set; }
         public int Number { get; set; } // StudentNumber, e.g. 474791
-        public DateTime BirthDate { get; set; }
+        public int Class { get; set; }
+        public int PhoneNumber { get; set; }
+        public string Nationality { get; set; }
+        public Student(){}
+        public Student(string Name, int Number)
+        {
+            this.Name = Name;
+            this.Number = Number;
+        }
     }
 }
