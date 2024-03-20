@@ -50,6 +50,7 @@
             columnHeader2 = new System.Windows.Forms.ColumnHeader();
             columnHeader3 = new System.Windows.Forms.ColumnHeader();
             columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            columnHeader5 = new System.Windows.Forms.ColumnHeader();
             label2 = new System.Windows.Forms.Label();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
@@ -200,7 +201,7 @@
             // 
             // listViewActivities
             // 
-            listViewActivities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            listViewActivities.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
             listViewActivities.Location = new System.Drawing.Point(30, 90);
             listViewActivities.Margin = new System.Windows.Forms.Padding(6);
             listViewActivities.Name = "listViewActivities";
@@ -212,25 +213,31 @@
             // columnHeader1
             // 
             columnHeader1.Text = "ActivityID";
-            columnHeader1.Width = 300;
+            columnHeader1.Width = 275;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Name";
             columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            columnHeader2.Width = 300;
+            columnHeader2.Width = 275;
             // 
             // columnHeader3
             // 
-            columnHeader3.Text = "StartDayTime";
+            columnHeader3.Text = "Day";
             columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            columnHeader3.Width = 300;
+            columnHeader3.Width = 275;
             // 
             // columnHeader4
             // 
-            columnHeader4.Text = "EndDayTime";
+            columnHeader4.Text = "Start Time";
             columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            columnHeader4.Width = 300;
+            columnHeader4.Width = 275;
+            // 
+            // columnHeader5
+            // 
+            columnHeader5.Text = "End Time";
+            columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            columnHeader5.Width = 275;
             // 
             // label2
             // 
@@ -294,5 +301,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
