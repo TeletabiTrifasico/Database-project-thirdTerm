@@ -44,7 +44,7 @@ namespace SomerenUI
         private void ShowRoomsPanel()
         {
             pnlDashboard.Hide();
-
+            
             pnlStudents.Hide();
 
             pnlRooms.Show();
@@ -98,7 +98,9 @@ namespace SomerenUI
 
             foreach (Room room in rooms)
             {
-                ListViewItem li = new ListViewItem(room.Id.ToString(), room.Number.ToString());
+                ListViewItem li = new ListViewItem(room.Id.ToString());
+                li.SubItems.Add(room.Number.ToString());
+                li.SubItems.Add(room.Capacity.ToString());
                 
                 li.Tag = room;   // link room object to listview item
                 listViewRooms.Items.Add(li);
