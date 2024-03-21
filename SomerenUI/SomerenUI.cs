@@ -41,7 +41,28 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
             }
         }
+        private void ShowRoomsPanel()
+        {
+            pnlDashboard.Hide();
 
+            pnlStudents.Hide();
+
+            pnlRooms.Show();
+
+            try
+            {
+                List<Room> rooms = GetRooms();
+                DisplayRooms(rooms);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the rooms: " + e.Message);
+
+            }
+
+
+
+        }
         private List<Student> GetStudents()
         {
             StudentService studentService = new StudentService();
@@ -61,7 +82,29 @@ namespace SomerenUI
                 listViewStudents.Items.Add(li);
             }
         }
+        private List<Room> GetRooms()
+        {
+            RoomService roomService = new RoomService();
+            List<Room> rooms = roomService.GetRooms();
+            return rooms;
 
+        }
+
+        private void DisplayRooms(List<Room> rooms)
+        {
+            // clear the listview before filling it
+
+            listViewRooms.Items.Clear();
+
+            foreach (Room room in rooms)
+            {
+                ListViewItem li = new ListViewItem(room.Id.ToString(), room.Number.ToString());
+                
+                li.Tag = room;   // link room object to listview item
+                listViewRooms.Items.Add(li);
+           
+            }
+        }
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
@@ -75,6 +118,26 @@ namespace SomerenUI
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowStudentsPanel();
+        }
+
+        private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowRoomsPanel();
+        }
+
+        private void pnlRooms_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listViewRooms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void SomerenUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
