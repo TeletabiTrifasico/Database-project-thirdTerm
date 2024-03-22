@@ -49,8 +49,8 @@
             roomID = new System.Windows.Forms.ColumnHeader();
             columnHeader2 = new System.Windows.Forms.ColumnHeader();
             columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            label2 = new System.Windows.Forms.Label();
             Building = new System.Windows.Forms.ColumnHeader();
+            label2 = new System.Windows.Forms.Label();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
@@ -225,8 +225,13 @@
             // columnHeader3
             // 
             columnHeader3.Tag = "capacity";
-            columnHeader3.Text = "Capacity";
+            columnHeader3.Text = "Size";
             columnHeader3.Width = 100;
+            // 
+            // Building
+            // 
+            Building.Text = "Type";
+            Building.Width = 100;
             // 
             // label2
             // 
@@ -237,11 +242,6 @@
             label2.Size = new System.Drawing.Size(110, 41);
             label2.TabIndex = 0;
             label2.Text = "Rooms";
-            // 
-            // Building
-            // 
-            Building.Text = "Building";
-            Building.Width = 100;
             // 
             // SomerenUI
             // 

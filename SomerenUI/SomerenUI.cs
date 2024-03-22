@@ -100,8 +100,8 @@ namespace SomerenUI
             {
                 ListViewItem li = new ListViewItem(room.Id.ToString());
                 li.SubItems.Add(room.Number.ToString());
-                li.SubItems.Add(room.Capacity.ToString());
-                li.SubItems.Add(room.Building.ToString());
+                li.SubItems.Add(room.Size.ToString());
+                li.SubItems.Add(room.Type.ToString());
                 
                 li.Tag = room;   // link room object to listview item
                 listViewRooms.Items.Add(li);
