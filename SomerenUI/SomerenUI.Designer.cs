@@ -75,11 +75,6 @@ namespace SomerenUI
             pnlStudents = new Panel();
             pictureBox1 = new PictureBox();
             listViewStudents = new ListView();
-            ColumnHeader1 = new ColumnHeader();
-            ColumnHeader2 = new ColumnHeader();
-            ColumnHeader3 = new ColumnHeader();
-            ColumnHeader4 = new ColumnHeader();
-            ColumnHeader5 = new ColumnHeader();
             label1 = new Label();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
@@ -231,6 +226,7 @@ namespace SomerenUI
             // 
             // listViewStudents
             // 
+
             listViewStudents.Location = new System.Drawing.Point(30, 90);
             listViewStudents.Margin = new System.Windows.Forms.Padding(6);
             listViewStudents.Name = "listViewStudents";
@@ -402,6 +398,7 @@ namespace SomerenUI
             label2.TabIndex = 0;
             label2.Text = "Rooms";
             listViewStudents.Columns.AddRange(new ColumnHeader[] { ColumnHeader1, ColumnHeader2, ColumnHeader3, ColumnHeader4, ColumnHeader5 });
+
             listViewStudents.Location = new System.Drawing.Point(18, 56);
             listViewStudents.Margin = new Padding(3, 4, 3, 4);
             listViewStudents.Name = "listViewStudents";
@@ -410,30 +407,6 @@ namespace SomerenUI
             listViewStudents.UseCompatibleStateImageBehavior = false;
             listViewStudents.View = View.Details;
             listViewStudents.SelectedIndexChanged += listViewStudents_SelectedIndexChanged;
-            // 
-            // ColumnHeader1
-            // 
-            ColumnHeader1.Text = "Name";
-            ColumnHeader1.Width = 130;
-            // 
-            // ColumnHeader2
-            // 
-            ColumnHeader2.Text = "Number";
-            ColumnHeader2.Width = 120;
-            // 
-            // ColumnHeader3
-            // 
-            ColumnHeader3.Text = "Nationality";
-            ColumnHeader3.Width = 120;
-            // 
-            // ColumnHeader4
-            // 
-            ColumnHeader4.Text = "Phone number";
-            ColumnHeader4.Width = 120;
-            // 
-            // ColumnHeader5
-            // 
-            ColumnHeader5.Text = "Class";
             // 
             // label1
             // 
