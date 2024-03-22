@@ -25,7 +25,6 @@ namespace SomerenUI
             // show dashboard
             pnlDashboard.Show();
         }
-
         private void ShowStudentsPanel()
         {
             // hide all other panels
@@ -92,7 +91,7 @@ namespace SomerenUI
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
             }
         }
         private void ShowRoomsPanel()
@@ -118,7 +117,29 @@ namespace SomerenUI
 
             }
         }
+        private void ShowLecturersPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlRooms.Hide();
+            pnlActivities.Hide();
+            pnlStudents.Hide();
+            pnlDrinks.Hide();
 
+            // show lecturers
+            pnlLecturers.Show();
+
+            try
+            {
+                List<Lecturer> lecturers = GetLecturers();
+                DisplayLecturers(lecturers);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the lecturers: " + e.Message);
+
+            }
+        }
 
 
         private List<Room> GetRooms()
@@ -128,7 +149,6 @@ namespace SomerenUI
             return rooms;
 
         }
-
         private void DisplayRooms(List<Room> rooms)
         {
             // clear the listview before filling it
@@ -169,9 +189,6 @@ namespace SomerenUI
                 list.SubItems.Add(lecturer.Age.ToString());
                 list.SubItems.Add(lecturer.PhoneNumber.ToString());
                 list.SubItems.Add(lecturer.RoomId.ToString());
-
-                //BURAYA GERI KALANLARI EKLE  VE DESIGN KISMINDA LECTURER BEYAZKISMINA TIKLAYIP BEYAZ KISMIN SAG USTTE  CIKAN YON ISARETINA BASIP EDIT COLUMNSDAN YENI COLUMNLAR EKLE VE TEXTLERINI YAP.
-
                 listViewLecturers.Items.Add(list);
             }
 
@@ -183,7 +200,6 @@ namespace SomerenUI
             List<Student> students = studentService.GetStudents();
             return students;
         }
-
         private void DisplayStudents(List<Student> students)
         {
             // clear the listview before filling it
@@ -204,14 +220,12 @@ namespace SomerenUI
             }
         }
 
-        // LIST ACTIVITIES
         private List<Activity> GetActivities()
         {
             ActivityService activityService = new ActivityService();
             List<Activity> activities = activityService.GetActivities();
             return activities;
         }
-        // DISPLAY ACTIVITIES
         private void DisplayActivities(List<Activity> activities)
         {
 
@@ -232,15 +246,12 @@ namespace SomerenUI
 
         }
 
-        //LIST DRINKS
         private List<Drink> GetDrinks()
         {
             DrinkService drinkService = new DrinkService();
             List<Drink> drinks = drinkService.GetDrinks();
             return drinks;
         }
-
-        //DISPLAY DRINKS
         private void DisplayDrinks(List<Drink> drinks)
         {
             // clear the listview before filling it
@@ -261,43 +272,44 @@ namespace SomerenUI
                 listViewDrinks.Items.Add(list);
             }
         }
-            private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
-            {
-                ShowDashboardPanel();
-            }
 
-            private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
-            {
-                Application.Exit();
-            }
 
-            private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-                ShowStudentsPanel();
-            }
-            private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e)
-            {
-
-            }
-
-            private void toolStripMenuItem1_Click(object sender, EventArgs e)
-            {
-
-            }
-
-            private void roomsToolStripMenuItem1_Click(object sender, EventArgs e)
-            {
-                ShowRoomsPanel();
-            }
-
-            private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-                ShowActivitiesPanel();
-            }
-
-            private void drinksToolStripMenuItem_Click(object sender, EventArgs e)
-            {
-                ShowDrinksPanel();
-            }
+        private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
+        {
+            ShowDashboardPanel();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowStudentsPanel();
+        }
+
+        private void roomsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ShowRoomsPanel();
+        }
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowActivitiesPanel();
+        }
+
+        private void drinksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowDrinksPanel();
+        }
+
+        private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowLecturersPanel();
+        }
+
+        private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void toolStripMenuItem1_Click(object sender, EventArgs e) { }
     }
+}
