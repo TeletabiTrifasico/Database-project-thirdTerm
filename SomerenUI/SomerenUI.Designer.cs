@@ -1,4 +1,6 @@
-﻿namespace SomerenUI
+﻿using System.Windows.Forms;
+
+namespace SomerenUI
 {
     partial class SomerenUI
     {
@@ -52,8 +54,8 @@
             columnHeader3 = new System.Windows.Forms.ColumnHeader();
             columnHeader4 = new System.Windows.Forms.ColumnHeader();
             columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            columnHeader6 = new System.Windows.Forms.ColumnHeader();
             label2 = new System.Windows.Forms.Label();
+
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
@@ -76,6 +78,7 @@
             // 
             // dashboardToolStripMenuItem
             // 
+
             dashboardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { dashboardToolStripMenuItem1, exitToolStripMenuItem });
             dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
             dashboardToolStripMenuItem.Size = new System.Drawing.Size(154, 38);
@@ -84,41 +87,53 @@
             // dashboardToolStripMenuItem1
             // 
             dashboardToolStripMenuItem1.Name = "dashboardToolStripMenuItem1";
+
             dashboardToolStripMenuItem1.Size = new System.Drawing.Size(262, 44);
+
             dashboardToolStripMenuItem1.Text = "Dashboard";
             dashboardToolStripMenuItem1.Click += dashboardToolStripMenuItem1_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+
             exitToolStripMenuItem.Size = new System.Drawing.Size(262, 44);
+
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // studentsToolStripMenuItem
             // 
             studentsToolStripMenuItem.Name = "studentsToolStripMenuItem";
+
             studentsToolStripMenuItem.Size = new System.Drawing.Size(127, 38);
+
             studentsToolStripMenuItem.Text = "Students";
             studentsToolStripMenuItem.Click += studentsToolStripMenuItem_Click;
             // 
             // lecturersToolStripMenuItem
             // 
             lecturersToolStripMenuItem.Name = "lecturersToolStripMenuItem";
+
             lecturersToolStripMenuItem.Size = new System.Drawing.Size(130, 38);
             lecturersToolStripMenuItem.Text = "Lecturers";
             lecturersToolStripMenuItem.Click += lecturersToolStripMenuItem_Click;
+
             // 
             // activitiesToolStripMenuItem
             // 
             activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
+
             activitiesToolStripMenuItem.Size = new System.Drawing.Size(129, 38);
+
             activitiesToolStripMenuItem.Text = "Activities";
             // 
             // roomsToolStripMenuItem
             // 
             roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
+
             roomsToolStripMenuItem.Size = new System.Drawing.Size(106, 38);
+
             roomsToolStripMenuItem.Text = "Rooms";
             // 
             // pnlDashboard
@@ -173,7 +188,17 @@
             label1.TabIndex = 0;
             label1.Text = "Students";
             // 
-            // pictureBox1
+            // ColumnHeader1
+            // 
+            ColumnHeader1.Text = "Name";
+            ColumnHeader1.Width = 130;
+            // 
+            // ColumnHeader2
+            // 
+            ColumnHeader2.Text = "Number";
+            ColumnHeader2.Width = 120;
+            // 
+            // ColumnHeader3
             // 
             pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new System.Drawing.Point(956, 6);
@@ -294,6 +319,7 @@
             pnlLecturers.ResumeLayout(false);
             pnlLecturers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+
             ResumeLayout(false);
             PerformLayout();
         }

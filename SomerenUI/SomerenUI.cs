@@ -80,9 +80,16 @@ namespace SomerenUI
 
             foreach (Student student in students)
             {
-                ListViewItem li = new ListViewItem(student.Name);
-                li.Tag = student;   // link student object to listview item
-                listViewStudents.Items.Add(li);
+                ListViewItem list = new ListViewItem(student.Name.ToString()); //create ListView
+                list.Tag = student;
+
+                //Add SubItems
+                list.SubItems.Add(student.Number.ToString());
+                list.SubItems.Add(student.Nationality.ToString());
+                list.SubItems.Add(student.PhoneNumber.ToString());
+                list.SubItems.Add(student.Class.ToString());
+
+                listViewStudents.Items.Add(list);
             }
         }
         private List<Lecturer> GetLecturers()
@@ -131,6 +138,9 @@ namespace SomerenUI
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowLecturerPanel();
+        private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
