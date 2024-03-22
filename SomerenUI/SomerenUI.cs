@@ -49,12 +49,62 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
             }
         }
-        private void ShowRoomsPanel()
+        private void ShowDrinksPanel()
         {
+            // hide all other panels
             pnlDashboard.Hide();
-
+            pnlLecturers.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
             pnlStudents.Hide();
 
+            // show drinks
+            pnlDrinks.Show();
+
+            try
+            {
+                // get and display all students
+                List<Drink> drinks = GetDrinks();
+                DisplayDrinks(drinks);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+            }
+        }
+        private void ShowActivitiesPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlLecturers.Hide();
+            pnlStudents.Hide();
+            pnlRooms.Hide();
+            pnlDrinks.Hide();
+
+            // show activities
+            pnlActivities.Show();
+
+            try
+            {
+                // get and display all students
+                List<Activity> activities = GetActivities();
+                DisplayActivities(activities);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+            }
+        }
+        private void ShowRoomsPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlLecturers.Hide();
+            pnlActivities.Hide();
+            pnlStudents.Hide();
+            pnlDrinks.Hide();
+
+            // show rooms
             pnlRooms.Show();
 
             try
@@ -137,6 +187,8 @@ namespace SomerenUI
         // DISPLAY ACTIVITIES
         private void DisplayActivities(List<Activity> activities)
         {
+
+
             // clear the listview before filling it
             listViewActivities.Items.Clear();
 
@@ -170,7 +222,7 @@ namespace SomerenUI
             foreach (Drink drink in drinks)
             {
                 ListViewItem list = new ListViewItem(drink.DrinkId.ToString());
-                
+
                 list.Tag = drink;
                 list.SubItems.Add(drink.DrinkId.ToString());
                 list.SubItems.Add(drink.DrinkName);
@@ -178,7 +230,7 @@ namespace SomerenUI
                 list.SubItems.Add(drink.Price.ToString());
                 list.SubItems.Add(drink.DrinkType);
                 list.SubItems.Add(drink.StockAmount);
-                
+
                 listViewDrinks.Items.Add(list);
             }
 
@@ -202,6 +254,26 @@ namespace SomerenUI
         private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roomsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ShowRoomsPanel();
+        }
+
+        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowActivitiesPanel();
+        }
+
+        private void drinksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowDrinksPanel();
         }
     }
 }

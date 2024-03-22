@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SomerenDAL
 {
-    public class DrinnkDao : BaseDao
+    public class DrinkDao : BaseDao
     {
         public List<Drink> GetAllDrinks()
         {

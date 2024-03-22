@@ -14,12 +14,12 @@ namespace SomerenService
 
         public DrinkService()
         {
-            activitydb = new DrinkDao();
+            drinkdb = new DrinkDao();
         }
 
         public List<Drink> GetDrinks()
         {
-            List<Drink> drinks = drink.db.GetAllActivities();
+            List<Drink> drinks = drinkdb.GetAllDrinks();
             return drinks;
         }
     }
