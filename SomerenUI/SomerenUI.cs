@@ -3,6 +3,7 @@ using SomerenModel;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System;
+using System.Diagnostics;
 
 namespace SomerenUI
 {
@@ -41,6 +42,29 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
             }
         }
+        private void ShowLecturerPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlStudents.Hide();
+
+            // show students
+            pnlLecturers.Show();
+
+            try
+            {
+                // get and display all students
+                List<Lecturer> lecturers = GetLecturers();
+                DisplayLecturers(lecturers);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+            }
+        }
+
+
+
 
         private List<Student> GetStudents()
         {
@@ -61,6 +85,33 @@ namespace SomerenUI
                 listViewStudents.Items.Add(li);
             }
         }
+        private List<Lecturer> GetLecturers()
+        {
+            LecturerService lecturerService = new LecturerService();
+            List<Lecturer> lecturers = lecturerService.GetLecturers();
+            return lecturers;
+        }
+        private void DisplayLecturers(List<Lecturer> lecturers)
+        {
+            // clear the listview before filling it
+            listViewLecturers.Items.Clear();
+
+            foreach (Lecturer lecturer in lecturers)
+            {
+                ListViewItem list = new ListViewItem(lecturer.LecturerID.ToString());
+                list.Tag = lecturer;
+                list.SubItems.Add(lecturer.FirstName);
+                list.SubItems.Add(lecturer.LastName);
+                list.SubItems.Add(lecturer.Age.ToString());
+                list.SubItems.Add(lecturer.PhoneNumber);
+                list.SubItems.Add(lecturer.RoomID.ToString());
+
+                //BURAYA GERI KALANLARI EKLE  VE DESIGN KISMINDA LECTURER BEYAZKISMINA TIKLAYIP BEYAZ KISMIN SAG USTTE  CIKAN YON ISARETINA BASIP EDIT COLUMNSDAN YENI COLUMNLAR EKLE VE TEXTLERINI YAP.
+
+                listViewLecturers.Items.Add(list);
+            }
+
+        }
 
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
@@ -76,5 +127,7 @@ namespace SomerenUI
         {
             ShowStudentsPanel();
         }
+
+        
     }
 }
