@@ -11,10 +11,5 @@ namespace SomerenModel
         public int PhoneNumber { get; set; }
         public string Nationality { get; set; }
         public Student(){}
-        public Student(string Name, int Number)
-        {
-            this.Name = Name;
-            this.Number = Number;
-        }
     }
 }
