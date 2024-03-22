@@ -17,6 +17,10 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlStudents.Hide();
+            pnlLecturers.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlDrinks.Hide();
 
             // show dashboard
             pnlDashboard.Show();
@@ -26,6 +30,10 @@ namespace SomerenUI
         {
             // hide all other panels
             pnlDashboard.Hide();
+            pnlLecturers.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlDrinks.Hide();
 
             // show students
             pnlStudents.Show();
