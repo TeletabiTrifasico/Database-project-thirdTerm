@@ -148,7 +148,34 @@ namespace SomerenUI
             }
         }
 
+        private List<Lecturer> GetLecturers()
+        {
+            LecturerService lecturerService = new LecturerService();
+            List<Lecturer> lecturers = lecturerService.GetLecturers();
+            return lecturers;
+        }
+        private void DisplayLecturers(List<Lecturer> lecturers)
+        {
+            // clear the listview before filling it
+            listViewLecturers.Items.Clear();
 
+            foreach (Lecturer lecturer in lecturers)
+            {
+                ListViewItem list = new ListViewItem(lecturer.LecturerId.ToString());
+                list.Tag = lecturer;
+                list.SubItems.Add(lecturer.LecturerId.ToString());
+                list.SubItems.Add(lecturer.FirstName);
+                list.SubItems.Add(lecturer.LastName);
+                list.SubItems.Add(lecturer.Age.ToString());
+                list.SubItems.Add(lecturer.PhoneNumber.ToString());
+                list.SubItems.Add(lecturer.RoomId.ToString());
+
+                //BURAYA GERI KALANLARI EKLE  VE DESIGN KISMINDA LECTURER BEYAZKISMINA TIKLAYIP BEYAZ KISMIN SAG USTTE  CIKAN YON ISARETINA BASIP EDIT COLUMNSDAN YENI COLUMNLAR EKLE VE TEXTLERINI YAP.
+
+                listViewLecturers.Items.Add(list);
+            }
+
+        }
 
         private List<Student> GetStudents()
         {
