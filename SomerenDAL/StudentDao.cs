@@ -29,7 +29,6 @@ namespace SomerenDAL
                     Class = (int)dr["class"],
                     PhoneNumber = (int)dr["phone_number"],
                     Nationality = dr["nationality"].ToString()
-
                 };
                 students.Add(student);
             }
