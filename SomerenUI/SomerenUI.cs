@@ -130,5 +130,6 @@ namespace SomerenUI
         {
             ShowActivityPanel();
         }
+
     }
 }

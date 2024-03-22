@@ -209,6 +209,7 @@
             listViewActivities.TabIndex = 1;
             listViewActivities.UseCompatibleStateImageBehavior = false;
             listViewActivities.View = System.Windows.Forms.View.Details;
+            
             // 
             // columnHeader1
             // 

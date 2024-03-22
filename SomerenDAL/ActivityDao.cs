@@ -17,11 +17,9 @@ namespace SomerenDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
-
         private List<Activity> ReadTables(DataTable dataTable)
         {
             List<Activity> activities = new List<Activity>();
-
             foreach (DataRow dr in dataTable.Rows)
             {
                 Activity activity = new Activity()
@@ -30,7 +28,7 @@ namespace SomerenDAL
                     Name = dr["name"].ToString(),
                     Day = dr["day"].ToString(),
                     StartDayTime = (TimeSpan)dr["start_day_time"],
-                    EndDayTime= (TimeSpan)dr["end_day_time"]
+                    EndDayTime = (TimeSpan)dr["end_day_time"]
                 };
                 activities.Add(activity);
             }
