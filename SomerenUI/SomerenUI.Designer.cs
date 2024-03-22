@@ -46,10 +46,11 @@
             pnlRooms = new System.Windows.Forms.Panel();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             listViewRooms = new System.Windows.Forms.ListView();
-            columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            roomID = new System.Windows.Forms.ColumnHeader();
             columnHeader2 = new System.Windows.Forms.ColumnHeader();
             columnHeader3 = new System.Windows.Forms.ColumnHeader();
             label2 = new System.Windows.Forms.Label();
+            Building = new System.Windows.Forms.ColumnHeader();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
@@ -199,7 +200,7 @@
             // 
             // listViewRooms
             // 
-            listViewRooms.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            listViewRooms.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { roomID, columnHeader2, columnHeader3, Building });
             listViewRooms.Location = new System.Drawing.Point(18, 56);
             listViewRooms.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             listViewRooms.Name = "listViewRooms";
@@ -209,11 +210,11 @@
             listViewRooms.View = System.Windows.Forms.View.Details;
             listViewRooms.SelectedIndexChanged += listViewRooms_SelectedIndexChanged;
             // 
-            // columnHeader1
+            // roomID
             // 
-            columnHeader1.Tag = "roomID";
-            columnHeader1.Text = "roomID";
-            columnHeader1.Width = 100;
+            roomID.Tag = "roomID";
+            roomID.Text = "roomID";
+            roomID.Width = 100;
             // 
             // columnHeader2
             // 
@@ -236,6 +237,11 @@
             label2.Size = new System.Drawing.Size(110, 41);
             label2.TabIndex = 0;
             label2.Text = "Rooms";
+            // 
+            // Building
+            // 
+            Building.Text = "Building";
+            Building.Width = 100;
             // 
             // SomerenUI
             // 
@@ -284,9 +290,10 @@
         private System.Windows.Forms.Panel pnlRooms;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ListView listViewRooms;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader roomID;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ColumnHeader Building;
     }
 }
