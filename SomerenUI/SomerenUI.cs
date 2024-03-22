@@ -77,6 +77,64 @@ namespace SomerenUI
             }
         }
 
+        // LIST ACTIVITIES
+        private List<Activity> GetActivities()
+        {
+            ActivityService activityService = new ActivityService();
+            List<Activity> activities = activityService.GetActivities();
+            return activities;
+        }
+        // DISPLAY ACTIVITIES
+        private void DisplayActivities(List<Activity> activities)
+        {
+            // clear the listview before filling it
+            listViewActivities.Items.Clear();
+
+            foreach (Activity activity in activities)
+            {
+                ListViewItem list = new ListViewItem(activity.ActivityId.ToString());
+                list.Tag = activity;
+                list.SubItems.Add(activity.Name);
+                list.SubItems.Add(activity.Day);
+                list.SubItems.Add(activity.StartDayTime.ToString());
+                list.SubItems.Add(activity.EndDayTime.ToString());
+                listViewActivities.Items.Add(list);
+            }
+
+        }
+
+        //LIST DRINKS
+        private List<Drink> GetDrinks()
+        {
+            DrinkService drinkService = new DrinkService();
+            List<Drink> drinks = drinkService.GetDrinks();
+            return drinks;
+        }
+
+        //DISPLAY DRINKS
+        private void DisplayDrinks(List<Drink> drinks)
+        {
+            // clear the listview before filling it
+            listViewDrinks.Items.Clear();
+
+            foreach (Drink drink in drinks)
+            {
+                ListViewItem list = new ListViewItem(drink.DrinkId.ToString());
+                
+                list.Tag = drink;
+                list.SubItems.Add(drink.DrinkId.ToString());
+                list.SubItems.Add(drink.DrinkName);
+                list.SubItems.Add(drink.IsAlcoholic.ToString());
+                list.SubItems.Add(drink.Price.ToString());
+                list.SubItems.Add(drink.DrinkType);
+                list.SubItems.Add(drink.StockAmount);
+                
+                listViewDrinks.Items.Add(list);
+            }
+
+        }
+
+
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
