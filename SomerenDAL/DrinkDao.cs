@@ -28,7 +28,7 @@ namespace SomerenDAL
                     DrinkId = (int)dr["drink_ID"],
                     DrinkName = dr["drink_name"].ToString(),
                     IsAlcoholic = Convert.ToBoolean(dr["isAlcoholic"]),
-                    Price = (int)dr["price"],
+                    Price = (float)dr["price"],
                     DrinkType = dr["drink_type"].ToString(),
                     StockAmount = dr["stock_amount"].ToString()
                 };
