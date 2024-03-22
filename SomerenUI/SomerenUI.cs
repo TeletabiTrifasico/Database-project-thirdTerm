@@ -233,47 +233,44 @@ namespace SomerenUI
 
                 listViewDrinks.Items.Add(list);
             }
-
         }
+            private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
+            {
+                ShowDashboardPanel();
+            }
 
+            private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
+            {
+                Application.Exit();
+            }
 
-        private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
-        {
-            ShowDashboardPanel();
-        }
+            private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                ShowStudentsPanel();
+            }
+            private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e)
+            {
 
-        private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            Application.Exit();
-        }
+            }
 
-        private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowStudentsPanel();
-        }
-        private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            private void toolStripMenuItem1_Click(object sender, EventArgs e)
+            {
 
-        }
+            }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
+            private void roomsToolStripMenuItem1_Click(object sender, EventArgs e)
+            {
+                ShowRoomsPanel();
+            }
 
-        }
+            private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                ShowActivitiesPanel();
+            }
 
-        private void roomsToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            ShowRoomsPanel();
-        }
-
-        private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowActivitiesPanel();
-        }
-
-        private void drinksToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowDrinksPanel();
+            private void drinksToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+                ShowDrinksPanel();
+            }
         }
     }
-}
