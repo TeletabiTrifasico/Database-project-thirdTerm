@@ -290,11 +290,12 @@ namespace SomerenUI
             pnlDrinks.Controls.Add(pictureBox5);
             pnlDrinks.Controls.Add(listViewDrinks);
             pnlDrinks.Controls.Add(label5);
-            pnlDrinks.Location = new System.Drawing.Point(14, 36);
+            pnlDrinks.Location = new System.Drawing.Point(12, 36);
             pnlDrinks.Margin = new Padding(3, 4, 3, 4);
             pnlDrinks.Name = "pnlDrinks";
             pnlDrinks.Size = new System.Drawing.Size(1072, 621);
             pnlDrinks.TabIndex = 6;
+            pnlDrinks.Paint += pnlDrinks_Paint;
             // 
             // pictureBox5
             // 

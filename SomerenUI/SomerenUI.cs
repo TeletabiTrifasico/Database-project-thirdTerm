@@ -13,14 +13,19 @@ namespace SomerenUI
             InitializeComponent();
         }
 
-        private void ShowDashboardPanel()
+        private void HideAllPanels()
         {
-            // hide all other panels
             pnlStudents.Hide();
             pnlLecturers.Hide();
             pnlActivities.Hide();
             pnlRooms.Hide();
             pnlDrinks.Hide();
+            pnlDashboard.Hide();
+        }
+        private void ShowDashboardPanel()
+        {
+            // hide all other panels
+            HideAllPanels();
 
             // show dashboard
             pnlDashboard.Show();
@@ -28,11 +33,7 @@ namespace SomerenUI
         private void ShowStudentsPanel()
         {
             // hide all other panels
-            pnlDashboard.Hide();
-            pnlLecturers.Hide();
-            pnlActivities.Hide();
-            pnlRooms.Hide();
-            pnlDrinks.Hide();
+            HideAllPanels();
 
             // show students
             pnlStudents.Show();
@@ -51,11 +52,7 @@ namespace SomerenUI
         private void ShowDrinksPanel()
         {
             // hide all other panels
-            pnlDashboard.Hide();
-            pnlLecturers.Hide();
-            pnlActivities.Hide();
-            pnlRooms.Hide();
-            pnlStudents.Hide();
+            HideAllPanels();
 
             // show drinks
             pnlDrinks.Show();
@@ -68,17 +65,13 @@ namespace SomerenUI
             }
             catch (Exception e)
             {
-                MessageBox.Show("Something went wrong while loading the students: " + e.Message);
+                MessageBox.Show("Something went wrong while loading the drinks: " + e.Message);
             }
         }
         private void ShowActivitiesPanel()
         {
             // hide all other panels
-            pnlDashboard.Hide();
-            pnlLecturers.Hide();
-            pnlStudents.Hide();
-            pnlRooms.Hide();
-            pnlDrinks.Hide();
+            HideAllPanels();
 
             // show activities
             pnlActivities.Show();
@@ -97,11 +90,7 @@ namespace SomerenUI
         private void ShowRoomsPanel()
         {
             // hide all other panels
-            pnlDashboard.Hide();
-            pnlLecturers.Hide();
-            pnlActivities.Hide();
-            pnlStudents.Hide();
-            pnlDrinks.Hide();
+            HideAllPanels();
 
             // show rooms
             pnlRooms.Show();
@@ -120,11 +109,7 @@ namespace SomerenUI
         private void ShowLecturersPanel()
         {
             // hide all other panels
-            pnlDashboard.Hide();
-            pnlRooms.Hide();
-            pnlActivities.Hide();
-            pnlStudents.Hide();
-            pnlDrinks.Hide();
+            HideAllPanels();
 
             // show lecturers
             pnlLecturers.Show();
@@ -311,5 +296,9 @@ namespace SomerenUI
 
         private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e) { }
         private void toolStripMenuItem1_Click(object sender, EventArgs e) { }
+        private void pnlDrinks_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
