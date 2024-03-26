@@ -168,7 +168,6 @@ namespace SomerenUI
             {
                 ListViewItem list = new ListViewItem(lecturer.LecturerId.ToString());
                 list.Tag = lecturer;
-                list.SubItems.Add(lecturer.LecturerId.ToString());
                 list.SubItems.Add(lecturer.FirstName);
                 list.SubItems.Add(lecturer.LastName);
                 list.SubItems.Add(lecturer.Age.ToString());
@@ -192,10 +191,11 @@ namespace SomerenUI
 
             foreach (Student student in students)
             {
-                ListViewItem list = new ListViewItem(student.Name.ToString()); //create ListView
+                ListViewItem list = new ListViewItem(student.FirstName.ToString()); //create ListView
                 list.Tag = student;
 
                 //Add SubItems
+                list.SubItems.Add(student.LastName.ToString());
                 list.SubItems.Add(student.Number.ToString());
                 list.SubItems.Add(student.Nationality.ToString());
                 list.SubItems.Add(student.PhoneNumber.ToString());
@@ -247,7 +247,6 @@ namespace SomerenUI
                 ListViewItem list = new ListViewItem(drink.DrinkId.ToString());
 
                 list.Tag = drink;
-                list.SubItems.Add(drink.DrinkId.ToString());
                 list.SubItems.Add(drink.DrinkName);
                 list.SubItems.Add(drink.IsAlcoholic.ToString());
                 list.SubItems.Add(drink.Price.ToString());
@@ -297,6 +296,16 @@ namespace SomerenUI
         private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e) { }
         private void toolStripMenuItem1_Click(object sender, EventArgs e) { }
         private void pnlDrinks_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlRooms_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlRooms_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

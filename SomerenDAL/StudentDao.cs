@@ -25,7 +25,8 @@ namespace SomerenDAL
                 Student student = new Student()
                 {
                     Number = (int)dr["student_number"],
-                    Name = dr["first_name"].ToString() + " " + dr["last_name"].ToString(),
+                    FirstName = dr["first_name"].ToString(),
+                    LastName = dr["last_name"].ToString(),
                     Class = (int)dr["class"],
                     PhoneNumber = (int)dr["phone_number"],
                     Nationality = dr["nationality"].ToString()
