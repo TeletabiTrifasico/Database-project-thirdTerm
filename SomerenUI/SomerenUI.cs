@@ -62,6 +62,9 @@ namespace SomerenUI
                 // get and display all students
                 List<Drink> drinks = GetDrinks();
                 DisplayDrinks(drinks);
+
+                List<Student> students = GetStudents();
+                DisplayStudents(students);
             }
             catch (Exception e)
             {
@@ -188,20 +191,36 @@ namespace SomerenUI
         {
             // clear the listview before filling it
             listViewStudents.Items.Clear();
+            listView1.Items.Clear();
 
             foreach (Student student in students)
             {
-                ListViewItem list = new ListViewItem(student.FirstName.ToString()); //create ListView
-                list.Tag = student;
+                ListViewItem list1 = new ListViewItem(student.FirstName.ToString()); //create ListView
+                list1.Tag = student;
 
                 //Add SubItems
-                list.SubItems.Add(student.LastName.ToString());
-                list.SubItems.Add(student.Number.ToString());
-                list.SubItems.Add(student.Nationality.ToString());
-                list.SubItems.Add(student.PhoneNumber.ToString());
-                list.SubItems.Add(student.Class.ToString());
+                list1.SubItems.Add(student.LastName.ToString());
+                list1.SubItems.Add(student.Number.ToString());
+                list1.SubItems.Add(student.Nationality.ToString());
+                list1.SubItems.Add(student.PhoneNumber.ToString());
+                list1.SubItems.Add(student.Class.ToString());
 
-                listViewStudents.Items.Add(list);
+                listView1.Items.Add(list1);
+            }
+
+            foreach (Student student in students)
+            {
+                ListViewItem list2 = new ListViewItem(student.FirstName.ToString()); //create ListView
+                list2.Tag = student;
+
+                //Add SubItems
+                list2.SubItems.Add(student.LastName.ToString());
+                list2.SubItems.Add(student.Number.ToString());
+                list2.SubItems.Add(student.Nationality.ToString());
+                list2.SubItems.Add(student.PhoneNumber.ToString());
+                list2.SubItems.Add(student.Class.ToString());
+
+                listViewStudents.Items.Add(list2);
             }
         }
 
@@ -299,15 +318,16 @@ namespace SomerenUI
         {
 
         }
-
         private void pnlRooms_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
         private void pnlRooms_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

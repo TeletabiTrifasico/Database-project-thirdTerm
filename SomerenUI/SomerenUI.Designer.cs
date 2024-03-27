@@ -63,6 +63,20 @@ namespace SomerenUI
             columnHeader11 = new ColumnHeader();
             label2 = new Label();
             pnlDrinks = new Panel();
+            label7 = new Label();
+            numericUpDown1 = new NumericUpDown();
+            txtQuantity = new Label();
+            textBox1 = new TextBox();
+            txtPrice = new Label();
+            btnPlaceOrder = new Button();
+            listView1 = new ListView();
+            columnHeader28 = new ColumnHeader();
+            columnHeader29 = new ColumnHeader();
+            columnHeader30 = new ColumnHeader();
+            columnHeader31 = new ColumnHeader();
+            columnHeader32 = new ColumnHeader();
+            columnHeader33 = new ColumnHeader();
+            label6 = new Label();
             radioButton4 = new RadioButton();
             radioButton3 = new RadioButton();
             radioButton2 = new RadioButton();
@@ -103,6 +117,7 @@ namespace SomerenUI
             pnlLecturers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlDrinks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             pnlActivities.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -330,6 +345,14 @@ namespace SomerenUI
             // 
             // pnlDrinks
             // 
+            pnlDrinks.Controls.Add(label7);
+            pnlDrinks.Controls.Add(numericUpDown1);
+            pnlDrinks.Controls.Add(txtQuantity);
+            pnlDrinks.Controls.Add(textBox1);
+            pnlDrinks.Controls.Add(txtPrice);
+            pnlDrinks.Controls.Add(btnPlaceOrder);
+            pnlDrinks.Controls.Add(listView1);
+            pnlDrinks.Controls.Add(label6);
             pnlDrinks.Controls.Add(radioButton4);
             pnlDrinks.Controls.Add(radioButton3);
             pnlDrinks.Controls.Add(radioButton2);
@@ -346,6 +369,101 @@ namespace SomerenUI
             pnlDrinks.Size = new System.Drawing.Size(1072, 621);
             pnlDrinks.TabIndex = 6;
             pnlDrinks.Paint += pnlDrinks_Paint;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(528, 351);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(101, 20);
+            label7.TabIndex = 18;
+            label7.Text = "Student name";
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new System.Drawing.Point(520, 147);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new System.Drawing.Size(150, 27);
+            numericUpDown1.TabIndex = 17;
+            // 
+            // txtQuantity
+            // 
+            txtQuantity.AutoSize = true;
+            txtQuantity.Location = new System.Drawing.Point(520, 124);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new System.Drawing.Size(65, 20);
+            txtQuantity.TabIndex = 16;
+            txtQuantity.Text = "Quantity";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new System.Drawing.Point(520, 79);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new System.Drawing.Size(125, 27);
+            textBox1.TabIndex = 15;
+            // 
+            // txtPrice
+            // 
+            txtPrice.AutoSize = true;
+            txtPrice.Location = new System.Drawing.Point(520, 56);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new System.Drawing.Size(41, 20);
+            txtPrice.TabIndex = 14;
+            txtPrice.Text = "Price";
+            // 
+            // btnPlaceOrder
+            // 
+            btnPlaceOrder.Location = new System.Drawing.Point(520, 425);
+            btnPlaceOrder.Name = "btnPlaceOrder";
+            btnPlaceOrder.Size = new System.Drawing.Size(127, 29);
+            btnPlaceOrder.TabIndex = 13;
+            btnPlaceOrder.Text = "Place order";
+            btnPlaceOrder.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { columnHeader28, columnHeader29, columnHeader30, columnHeader31, columnHeader32, columnHeader33 });
+            listView1.Location = new System.Drawing.Point(15, 347);
+            listView1.Name = "listView1";
+            listView1.Size = new System.Drawing.Size(461, 217);
+            listView1.TabIndex = 12;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            // 
+            // columnHeader28
+            // 
+            columnHeader28.Text = "First name";
+            // 
+            // columnHeader29
+            // 
+            columnHeader29.Text = "Last name";
+            // 
+            // columnHeader30
+            // 
+            columnHeader30.Text = "Sutent number";
+            // 
+            // columnHeader31
+            // 
+            columnHeader31.Text = "Nationality";
+            // 
+            // columnHeader32
+            // 
+            columnHeader32.Text = "Phone number";
+            // 
+            // columnHeader33
+            // 
+            columnHeader33.Text = "Class";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label6.Location = new System.Drawing.Point(15, 292);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(134, 41);
+            label6.TabIndex = 11;
+            label6.Text = "Students";
             // 
             // radioButton4
             // 
@@ -429,10 +547,11 @@ namespace SomerenUI
             // listViewDrinks
             // 
             listViewDrinks.Columns.AddRange(new ColumnHeader[] { columnHeader21, columnHeader22, columnHeader23, columnHeader24, columnHeader25, columnHeader26 });
+            listViewDrinks.FullRowSelect = true;
             listViewDrinks.Location = new System.Drawing.Point(18, 56);
             listViewDrinks.Margin = new Padding(3, 4, 3, 4);
             listViewDrinks.Name = "listViewDrinks";
-            listViewDrinks.Size = new System.Drawing.Size(875, 542);
+            listViewDrinks.Size = new System.Drawing.Size(458, 215);
             listViewDrinks.TabIndex = 1;
             listViewDrinks.UseCompatibleStateImageBehavior = false;
             listViewDrinks.View = View.Details;
@@ -597,13 +716,13 @@ namespace SomerenUI
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1100, 673);
-            Controls.Add(pnlRooms);
-            Controls.Add(pnlActivities);
+            Controls.Add(menuStrip1);
             Controls.Add(pnlDrinks);
             Controls.Add(pnlLecturers);
-            Controls.Add(menuStrip1);
             Controls.Add(pnlStudents);
             Controls.Add(pnlDashboard);
+            Controls.Add(pnlRooms);
+            Controls.Add(pnlActivities);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "SomerenUI";
@@ -620,6 +739,7 @@ namespace SomerenUI
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             pnlDrinks.ResumeLayout(false);
             pnlDrinks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             pnlActivities.ResumeLayout(false);
             pnlActivities.PerformLayout();
@@ -698,5 +818,19 @@ namespace SomerenUI
         private RadioButton radioButton3;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
+        private ListView listView1;
+        private Label label6;
+        private ColumnHeader columnHeader28;
+        private ColumnHeader columnHeader29;
+        private ColumnHeader columnHeader30;
+        private ColumnHeader columnHeader31;
+        private ColumnHeader columnHeader32;
+        private ColumnHeader columnHeader33;
+        private Label txtPrice;
+        private Button btnPlaceOrder;
+        private TextBox textBox1;
+        private Label label7;
+        private NumericUpDown numericUpDown1;
+        private Label txtQuantity;
     }
 }
