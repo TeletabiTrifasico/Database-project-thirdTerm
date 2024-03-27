@@ -246,22 +246,27 @@ namespace SomerenUI
             // columnHeader1
             // 
             columnHeader1.Text = "FirstName";
+            columnHeader1.Width = 100;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Last name";
+            columnHeader2.Width = 100;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Student number";
+            columnHeader3.Width = 120;
             // 
             // columnHeader4
             // 
             columnHeader4.Text = "Nationality";
+            columnHeader4.Width = 100;
             // 
             // columnHeader5
             // 
             columnHeader5.Text = "Phone number";
+            columnHeader5.Width = 110;
             // 
             // columnHeader27
             // 
@@ -312,14 +317,17 @@ namespace SomerenUI
             // columnHeader6
             // 
             columnHeader6.Text = "Lecturer ID";
+            columnHeader6.Width = 100;
             // 
             // columnHeader7
             // 
             columnHeader7.Text = "First name";
+            columnHeader7.Width = 100;
             // 
             // columnHeader8
             // 
             columnHeader8.Text = "Last Name";
+            columnHeader8.Width = 100;
             // 
             // columnHeader9
             // 
@@ -328,10 +336,12 @@ namespace SomerenUI
             // columnHeader10
             // 
             columnHeader10.Text = "Phone number";
+            columnHeader10.Width = 120;
             // 
             // columnHeader11
             // 
             columnHeader11.Text = "Room ID";
+            columnHeader11.Width = 90;
             // 
             // label2
             // 
@@ -373,7 +383,7 @@ namespace SomerenUI
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(528, 351);
+            label7.Location = new System.Drawing.Point(649, 330);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(101, 20);
             label7.TabIndex = 18;
@@ -381,7 +391,7 @@ namespace SomerenUI
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new System.Drawing.Point(520, 147);
+            numericUpDown1.Location = new System.Drawing.Point(641, 126);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new System.Drawing.Size(150, 27);
             numericUpDown1.TabIndex = 17;
@@ -389,7 +399,7 @@ namespace SomerenUI
             // txtQuantity
             // 
             txtQuantity.AutoSize = true;
-            txtQuantity.Location = new System.Drawing.Point(520, 124);
+            txtQuantity.Location = new System.Drawing.Point(641, 103);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new System.Drawing.Size(65, 20);
             txtQuantity.TabIndex = 16;
@@ -397,7 +407,7 @@ namespace SomerenUI
             // 
             // textBox1
             // 
-            textBox1.Location = new System.Drawing.Point(520, 79);
+            textBox1.Location = new System.Drawing.Point(641, 58);
             textBox1.Name = "textBox1";
             textBox1.Size = new System.Drawing.Size(125, 27);
             textBox1.TabIndex = 15;
@@ -405,7 +415,7 @@ namespace SomerenUI
             // txtPrice
             // 
             txtPrice.AutoSize = true;
-            txtPrice.Location = new System.Drawing.Point(520, 56);
+            txtPrice.Location = new System.Drawing.Point(641, 35);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new System.Drawing.Size(41, 20);
             txtPrice.TabIndex = 14;
@@ -413,7 +423,7 @@ namespace SomerenUI
             // 
             // btnPlaceOrder
             // 
-            btnPlaceOrder.Location = new System.Drawing.Point(520, 425);
+            btnPlaceOrder.Location = new System.Drawing.Point(641, 404);
             btnPlaceOrder.Name = "btnPlaceOrder";
             btnPlaceOrder.Size = new System.Drawing.Size(127, 29);
             btnPlaceOrder.TabIndex = 13;
@@ -423,9 +433,10 @@ namespace SomerenUI
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader28, columnHeader29, columnHeader30, columnHeader31, columnHeader32, columnHeader33 });
+            listView1.FullRowSelect = true;
             listView1.Location = new System.Drawing.Point(15, 347);
             listView1.Name = "listView1";
-            listView1.Size = new System.Drawing.Size(461, 217);
+            listView1.Size = new System.Drawing.Size(564, 217);
             listView1.TabIndex = 12;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -434,22 +445,27 @@ namespace SomerenUI
             // columnHeader28
             // 
             columnHeader28.Text = "First name";
+            columnHeader28.Width = 80;
             // 
             // columnHeader29
             // 
             columnHeader29.Text = "Last name";
+            columnHeader29.Width = 80;
             // 
             // columnHeader30
             // 
             columnHeader30.Text = "Sutent number";
+            columnHeader30.Width = 110;
             // 
             // columnHeader31
             // 
             columnHeader31.Text = "Nationality";
+            columnHeader31.Width = 90;
             // 
             // columnHeader32
             // 
             columnHeader32.Text = "Phone number";
+            columnHeader32.Width = 110;
             // 
             // columnHeader33
             // 
@@ -551,7 +567,7 @@ namespace SomerenUI
             listViewDrinks.Location = new System.Drawing.Point(18, 56);
             listViewDrinks.Margin = new Padding(3, 4, 3, 4);
             listViewDrinks.Name = "listViewDrinks";
-            listViewDrinks.Size = new System.Drawing.Size(458, 215);
+            listViewDrinks.Size = new System.Drawing.Size(561, 215);
             listViewDrinks.TabIndex = 1;
             listViewDrinks.UseCompatibleStateImageBehavior = false;
             listViewDrinks.View = View.Details;
@@ -559,6 +575,7 @@ namespace SomerenUI
             // columnHeader21
             // 
             columnHeader21.Text = "Drink ID";
+            columnHeader21.Width = 70;
             // 
             // columnHeader22
             // 
@@ -567,6 +584,7 @@ namespace SomerenUI
             // columnHeader23
             // 
             columnHeader23.Text = "Alcoholic";
+            columnHeader23.Width = 80;
             // 
             // columnHeader24
             // 
@@ -579,6 +597,7 @@ namespace SomerenUI
             // columnHeader26
             // 
             columnHeader26.Text = "Stock amount";
+            columnHeader26.Width = 110;
             // 
             // label5
             // 
@@ -625,6 +644,7 @@ namespace SomerenUI
             // columnHeader12
             // 
             columnHeader12.Text = "Activity ID";
+            columnHeader12.Width = 100;
             // 
             // columnHeader13
             // 
@@ -637,10 +657,12 @@ namespace SomerenUI
             // columnHeader15
             // 
             columnHeader15.Text = "Start time";
+            columnHeader15.Width = 100;
             // 
             // columnHeader16
             // 
             columnHeader16.Text = "End time";
+            columnHeader16.Width = 100;
             // 
             // label3
             // 
@@ -688,10 +710,12 @@ namespace SomerenUI
             // columnHeader17
             // 
             columnHeader17.Text = "Room ID";
+            columnHeader17.Width = 100;
             // 
             // columnHeader18
             // 
             columnHeader18.Text = "Foor number";
+            columnHeader18.Width = 100;
             // 
             // columnHeader19
             // 
