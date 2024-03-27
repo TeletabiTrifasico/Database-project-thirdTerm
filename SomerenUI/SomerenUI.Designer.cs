@@ -53,33 +53,6 @@ namespace SomerenUI
             columnHeader27 = new ColumnHeader();
             label1 = new Label();
             pnlLecturers = new Panel();
-            pnlDrinks = new Panel();
-            pnlActivities = new Panel();
-            pnlRooms = new Panel();
-            pictureBox4 = new PictureBox();
-            listViewRooms = new ListView();
-            columnHeader17 = new ColumnHeader();
-            columnHeader18 = new ColumnHeader();
-            columnHeader19 = new ColumnHeader();
-            columnHeader20 = new ColumnHeader();
-            label4 = new Label();
-            pictureBox3 = new PictureBox();
-            listViewActivities = new ListView();
-            columnHeader12 = new ColumnHeader();
-            columnHeader13 = new ColumnHeader();
-            columnHeader14 = new ColumnHeader();
-            columnHeader15 = new ColumnHeader();
-            columnHeader16 = new ColumnHeader();
-            label3 = new Label();
-            pictureBox5 = new PictureBox();
-            listViewDrinks = new ListView();
-            columnHeader21 = new ColumnHeader();
-            columnHeader22 = new ColumnHeader();
-            columnHeader23 = new ColumnHeader();
-            columnHeader24 = new ColumnHeader();
-            columnHeader25 = new ColumnHeader();
-            columnHeader26 = new ColumnHeader();
-            label5 = new Label();
             pictureBox2 = new PictureBox();
             listViewLecturers = new ListView();
             columnHeader6 = new ColumnHeader();
@@ -89,18 +62,52 @@ namespace SomerenUI
             columnHeader10 = new ColumnHeader();
             columnHeader11 = new ColumnHeader();
             label2 = new Label();
+            pnlDrinks = new Panel();
+            txtQuarter = new Label();
+            txtbxYear = new TextBox();
+            txtYear = new Label();
+            pictureBox5 = new PictureBox();
+            listViewDrinks = new ListView();
+            columnHeader21 = new ColumnHeader();
+            columnHeader22 = new ColumnHeader();
+            columnHeader23 = new ColumnHeader();
+            columnHeader24 = new ColumnHeader();
+            columnHeader25 = new ColumnHeader();
+            columnHeader26 = new ColumnHeader();
+            label5 = new Label();
+            pnlActivities = new Panel();
+            pictureBox3 = new PictureBox();
+            listViewActivities = new ListView();
+            columnHeader12 = new ColumnHeader();
+            columnHeader13 = new ColumnHeader();
+            columnHeader14 = new ColumnHeader();
+            columnHeader15 = new ColumnHeader();
+            columnHeader16 = new ColumnHeader();
+            label3 = new Label();
+            pnlRooms = new Panel();
+            pictureBox4 = new PictureBox();
+            listViewRooms = new ListView();
+            columnHeader17 = new ColumnHeader();
+            columnHeader18 = new ColumnHeader();
+            columnHeader19 = new ColumnHeader();
+            columnHeader20 = new ColumnHeader();
+            label4 = new Label();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton3 = new RadioButton();
+            radioButton4 = new RadioButton();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlLecturers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlDrinks.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             pnlActivities.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             pnlRooms.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -110,7 +117,7 @@ namespace SomerenUI
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new System.Drawing.Size(1099, 30);
+            menuStrip1.Size = new System.Drawing.Size(1098, 30);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -266,138 +273,104 @@ namespace SomerenUI
             pnlLecturers.Size = new System.Drawing.Size(1072, 621);
             pnlLecturers.TabIndex = 3;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new System.Drawing.Point(920, 0);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(149, 164);
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
+            // listViewLecturers
+            // 
+            listViewLecturers.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10, columnHeader11 });
+            listViewLecturers.Location = new System.Drawing.Point(18, 56);
+            listViewLecturers.Margin = new Padding(3, 4, 3, 4);
+            listViewLecturers.Name = "listViewLecturers";
+            listViewLecturers.Size = new System.Drawing.Size(875, 542);
+            listViewLecturers.TabIndex = 1;
+            listViewLecturers.UseCompatibleStateImageBehavior = false;
+            listViewLecturers.View = View.Details;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Lecturer ID";
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "First name";
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "Last Name";
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "Age";
+            // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "Phone number";
+            // 
+            // columnHeader11
+            // 
+            columnHeader11.Text = "Room ID";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(15, 9);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(138, 41);
+            label2.TabIndex = 0;
+            label2.Text = "Lecturers";
+            // 
             // pnlDrinks
             // 
+            pnlDrinks.Controls.Add(radioButton4);
+            pnlDrinks.Controls.Add(radioButton3);
+            pnlDrinks.Controls.Add(radioButton2);
+            pnlDrinks.Controls.Add(radioButton1);
+            pnlDrinks.Controls.Add(txtQuarter);
+            pnlDrinks.Controls.Add(txtbxYear);
+            pnlDrinks.Controls.Add(txtYear);
             pnlDrinks.Controls.Add(pictureBox5);
             pnlDrinks.Controls.Add(listViewDrinks);
             pnlDrinks.Controls.Add(label5);
-            pnlDrinks.Location = new System.Drawing.Point(8, 34);
+            pnlDrinks.Location = new System.Drawing.Point(2, 32);
             pnlDrinks.Margin = new Padding(3, 4, 3, 4);
             pnlDrinks.Name = "pnlDrinks";
             pnlDrinks.Size = new System.Drawing.Size(1072, 621);
             pnlDrinks.TabIndex = 6;
             pnlDrinks.Paint += pnlDrinks_Paint;
             // 
-            // pnlActivities
+            // txtQuarter
             // 
-            pnlActivities.Controls.Add(pictureBox3);
-            pnlActivities.Controls.Add(listViewActivities);
-            pnlActivities.Controls.Add(label3);
-            pnlActivities.Location = new System.Drawing.Point(5, 34);
-            pnlActivities.Margin = new Padding(3, 4, 3, 4);
-            pnlActivities.Name = "pnlActivities";
-            pnlActivities.Size = new System.Drawing.Size(1072, 621);
-            pnlActivities.TabIndex = 4;
+            txtQuarter.AutoSize = true;
+            txtQuarter.Location = new System.Drawing.Point(899, 235);
+            txtQuarter.Name = "txtQuarter";
+            txtQuarter.Size = new System.Drawing.Size(62, 20);
+            txtQuarter.TabIndex = 5;
+            txtQuarter.Text = "Quarter:";
             // 
-            // pnlRooms
+            // txtbxYear
             // 
-            pnlRooms.Controls.Add(pictureBox4);
-            pnlRooms.Controls.Add(listViewRooms);
-            pnlRooms.Controls.Add(label4);
-            pnlRooms.Location = new System.Drawing.Point(2, 34);
-            pnlRooms.Margin = new Padding(3, 4, 3, 4);
-            pnlRooms.Name = "pnlRooms";
-            pnlRooms.Size = new System.Drawing.Size(1072, 621);
-            pnlRooms.TabIndex = 5;
-            pnlRooms.Paint += pnlRooms_Paint_1;
+            txtbxYear.Location = new System.Drawing.Point(904, 201);
+            txtbxYear.Name = "txtbxYear";
+            txtbxYear.Size = new System.Drawing.Size(125, 27);
+            txtbxYear.TabIndex = 4;
             // 
-            // pictureBox4
+            // txtYear
             // 
-            pictureBox4.Image = (System.Drawing.Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new System.Drawing.Point(920, 0);
-            pictureBox4.Margin = new Padding(3, 4, 3, 4);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new System.Drawing.Size(149, 164);
-            pictureBox4.TabIndex = 2;
-            pictureBox4.TabStop = false;
-            // 
-            // listViewRooms
-            // 
-            listViewRooms.Columns.AddRange(new ColumnHeader[] { columnHeader17, columnHeader18, columnHeader19, columnHeader20 });
-            listViewRooms.Location = new System.Drawing.Point(18, 56);
-            listViewRooms.Margin = new Padding(3, 4, 3, 4);
-            listViewRooms.Name = "listViewRooms";
-            listViewRooms.Size = new System.Drawing.Size(875, 542);
-            listViewRooms.TabIndex = 1;
-            listViewRooms.UseCompatibleStateImageBehavior = false;
-            listViewRooms.View = View.Details;
-            // 
-            // columnHeader17
-            // 
-            columnHeader17.Text = "Room ID";
-            // 
-            // columnHeader18
-            // 
-            columnHeader18.Text = "Foor number";
-            // 
-            // columnHeader19
-            // 
-            columnHeader19.Text = "Size";
-            // 
-            // columnHeader20
-            // 
-            columnHeader20.Text = "Type";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label4.Location = new System.Drawing.Point(15, 9);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(110, 41);
-            label4.TabIndex = 0;
-            label4.Text = "Rooms";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new System.Drawing.Point(920, 0);
-            pictureBox3.Margin = new Padding(3, 4, 3, 4);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new System.Drawing.Size(149, 164);
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            // 
-            // listViewActivities
-            // 
-            listViewActivities.Columns.AddRange(new ColumnHeader[] { columnHeader12, columnHeader13, columnHeader14, columnHeader15, columnHeader16 });
-            listViewActivities.Location = new System.Drawing.Point(18, 56);
-            listViewActivities.Margin = new Padding(3, 4, 3, 4);
-            listViewActivities.Name = "listViewActivities";
-            listViewActivities.Size = new System.Drawing.Size(875, 542);
-            listViewActivities.TabIndex = 1;
-            listViewActivities.UseCompatibleStateImageBehavior = false;
-            listViewActivities.View = View.Details;
-            // 
-            // columnHeader12
-            // 
-            columnHeader12.Text = "Activity ID";
-            // 
-            // columnHeader13
-            // 
-            columnHeader13.Text = "Name";
-            // 
-            // columnHeader14
-            // 
-            columnHeader14.Text = "Day";
-            // 
-            // columnHeader15
-            // 
-            columnHeader15.Text = "Start time";
-            // 
-            // columnHeader16
-            // 
-            columnHeader16.Text = "End time";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(15, 9);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(135, 41);
-            label3.TabIndex = 0;
-            label3.Text = "Activities";
+            txtYear.AutoSize = true;
+            txtYear.Location = new System.Drawing.Point(899, 176);
+            txtYear.Name = "txtYear";
+            txtYear.Size = new System.Drawing.Size(40, 20);
+            txtYear.TabIndex = 3;
+            txtYear.Text = "Year:";
             // 
             // pictureBox5
             // 
@@ -454,66 +427,176 @@ namespace SomerenUI
             label5.TabIndex = 0;
             label5.Text = "Drinks";
             // 
-            // pictureBox2
+            // pnlActivities
             // 
-            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new System.Drawing.Point(920, 0);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(149, 164);
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
+            pnlActivities.Controls.Add(pictureBox3);
+            pnlActivities.Controls.Add(listViewActivities);
+            pnlActivities.Controls.Add(label3);
+            pnlActivities.Location = new System.Drawing.Point(5, 36);
+            pnlActivities.Margin = new Padding(3, 4, 3, 4);
+            pnlActivities.Name = "pnlActivities";
+            pnlActivities.Size = new System.Drawing.Size(1072, 621);
+            pnlActivities.TabIndex = 4;
             // 
-            // listViewLecturers
+            // pictureBox3
             // 
-            listViewLecturers.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10, columnHeader11 });
-            listViewLecturers.Location = new System.Drawing.Point(18, 56);
-            listViewLecturers.Margin = new Padding(3, 4, 3, 4);
-            listViewLecturers.Name = "listViewLecturers";
-            listViewLecturers.Size = new System.Drawing.Size(875, 542);
-            listViewLecturers.TabIndex = 1;
-            listViewLecturers.UseCompatibleStateImageBehavior = false;
-            listViewLecturers.View = View.Details;
+            pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new System.Drawing.Point(920, 0);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new System.Drawing.Size(149, 164);
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
             // 
-            // columnHeader6
+            // listViewActivities
             // 
-            columnHeader6.Text = "Lecturer ID";
+            listViewActivities.Columns.AddRange(new ColumnHeader[] { columnHeader12, columnHeader13, columnHeader14, columnHeader15, columnHeader16 });
+            listViewActivities.Location = new System.Drawing.Point(18, 56);
+            listViewActivities.Margin = new Padding(3, 4, 3, 4);
+            listViewActivities.Name = "listViewActivities";
+            listViewActivities.Size = new System.Drawing.Size(875, 542);
+            listViewActivities.TabIndex = 1;
+            listViewActivities.UseCompatibleStateImageBehavior = false;
+            listViewActivities.View = View.Details;
             // 
-            // columnHeader7
+            // columnHeader12
             // 
-            columnHeader7.Text = "First name";
+            columnHeader12.Text = "Activity ID";
             // 
-            // columnHeader8
+            // columnHeader13
             // 
-            columnHeader8.Text = "Last Name";
+            columnHeader13.Text = "Name";
             // 
-            // columnHeader9
+            // columnHeader14
             // 
-            columnHeader9.Text = "Age";
+            columnHeader14.Text = "Day";
             // 
-            // columnHeader10
+            // columnHeader15
             // 
-            columnHeader10.Text = "Phone number";
+            columnHeader15.Text = "Start time";
             // 
-            // columnHeader11
+            // columnHeader16
             // 
-            columnHeader11.Text = "Room ID";
+            columnHeader16.Text = "End time";
             // 
-            // label2
+            // label3
             // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(15, 9);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(138, 41);
-            label2.TabIndex = 0;
-            label2.Text = "Lecturers";
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(15, 9);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(135, 41);
+            label3.TabIndex = 0;
+            label3.Text = "Activities";
+            // 
+            // pnlRooms
+            // 
+            pnlRooms.Controls.Add(pictureBox4);
+            pnlRooms.Controls.Add(listViewRooms);
+            pnlRooms.Controls.Add(label4);
+            pnlRooms.Location = new System.Drawing.Point(8, 34);
+            pnlRooms.Margin = new Padding(3, 4, 3, 4);
+            pnlRooms.Name = "pnlRooms";
+            pnlRooms.Size = new System.Drawing.Size(1072, 621);
+            pnlRooms.TabIndex = 5;
+            pnlRooms.Paint += pnlRooms_Paint_1;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (System.Drawing.Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new System.Drawing.Point(920, 0);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new System.Drawing.Size(149, 164);
+            pictureBox4.TabIndex = 2;
+            pictureBox4.TabStop = false;
+            // 
+            // listViewRooms
+            // 
+            listViewRooms.Columns.AddRange(new ColumnHeader[] { columnHeader17, columnHeader18, columnHeader19, columnHeader20 });
+            listViewRooms.Location = new System.Drawing.Point(18, 56);
+            listViewRooms.Margin = new Padding(3, 4, 3, 4);
+            listViewRooms.Name = "listViewRooms";
+            listViewRooms.Size = new System.Drawing.Size(875, 542);
+            listViewRooms.TabIndex = 1;
+            listViewRooms.UseCompatibleStateImageBehavior = false;
+            listViewRooms.View = View.Details;
+            // 
+            // columnHeader17
+            // 
+            columnHeader17.Text = "Room ID";
+            // 
+            // columnHeader18
+            // 
+            columnHeader18.Text = "Foor number";
+            // 
+            // columnHeader19
+            // 
+            columnHeader19.Text = "Size";
+            // 
+            // columnHeader20
+            // 
+            columnHeader20.Text = "Type";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(15, 9);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(110, 41);
+            label4.TabIndex = 0;
+            label4.Text = "Rooms";
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new System.Drawing.Point(904, 258);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new System.Drawing.Size(49, 24);
+            radioButton1.TabIndex = 7;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Q1";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new System.Drawing.Point(904, 288);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new System.Drawing.Size(49, 24);
+            radioButton2.TabIndex = 8;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Q2";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new System.Drawing.Point(904, 318);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new System.Drawing.Size(49, 24);
+            radioButton3.TabIndex = 9;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "Q3";
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            radioButton4.AutoSize = true;
+            radioButton4.Location = new System.Drawing.Point(904, 348);
+            radioButton4.Name = "radioButton4";
+            radioButton4.Size = new System.Drawing.Size(49, 24);
+            radioButton4.TabIndex = 10;
+            radioButton4.TabStop = true;
+            radioButton4.Text = "Q4";
+            radioButton4.UseVisualStyleBackColor = true;
             // 
             // SomerenUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1099, 673);
+            ClientSize = new System.Drawing.Size(1098, 673);
             Controls.Add(pnlRooms);
             Controls.Add(pnlActivities);
             Controls.Add(pnlDrinks);
@@ -534,16 +617,16 @@ namespace SomerenUI
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlLecturers.ResumeLayout(false);
             pnlLecturers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             pnlDrinks.ResumeLayout(false);
             pnlDrinks.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             pnlActivities.ResumeLayout(false);
             pnlActivities.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             pnlRooms.ResumeLayout(false);
             pnlRooms.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -608,5 +691,12 @@ namespace SomerenUI
         private ColumnHeader columnHeader26;
         private Label label5;
         private ColumnHeader columnHeader27;
+        private Label txtQuarter;
+        private TextBox txtbxYear;
+        private Label txtYear;
+        private RadioButton radioButton4;
+        private RadioButton radioButton3;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
     }
 }
