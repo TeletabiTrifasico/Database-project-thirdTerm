@@ -269,37 +269,30 @@ namespace SomerenUI
             }
         }
 
-
         private void dashboardToolStripMenuItem1_Click(object sender, System.EventArgs e)
         {
             ShowDashboardPanel();
         }
-
         private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             Application.Exit();
         }
-
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowStudentsPanel();
         }
-
         private void roomsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ShowRoomsPanel();
         }
-
         private void activitiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowActivitiesPanel();
         }
-
         private void drinksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowDrinksPanel();
         }
-
         private void lecturersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ShowLecturersPanel();
