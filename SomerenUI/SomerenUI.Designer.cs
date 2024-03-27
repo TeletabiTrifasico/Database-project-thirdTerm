@@ -63,6 +63,10 @@ namespace SomerenUI
             columnHeader11 = new ColumnHeader();
             label2 = new Label();
             pnlDrinks = new Panel();
+            radioButton4 = new RadioButton();
+            radioButton3 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
             txtQuarter = new Label();
             txtbxYear = new TextBox();
             txtYear = new Label();
@@ -92,10 +96,6 @@ namespace SomerenUI
             columnHeader19 = new ColumnHeader();
             columnHeader20 = new ColumnHeader();
             label4 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
             menuStrip1.SuspendLayout();
             pnlDashboard.SuspendLayout();
             pnlStudents.SuspendLayout();
@@ -117,7 +117,7 @@ namespace SomerenUI
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new System.Drawing.Size(1098, 30);
+            menuStrip1.Size = new System.Drawing.Size(1100, 30);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -340,17 +340,61 @@ namespace SomerenUI
             pnlDrinks.Controls.Add(pictureBox5);
             pnlDrinks.Controls.Add(listViewDrinks);
             pnlDrinks.Controls.Add(label5);
-            pnlDrinks.Location = new System.Drawing.Point(2, 32);
+            pnlDrinks.Location = new System.Drawing.Point(5, 34);
             pnlDrinks.Margin = new Padding(3, 4, 3, 4);
             pnlDrinks.Name = "pnlDrinks";
             pnlDrinks.Size = new System.Drawing.Size(1072, 621);
             pnlDrinks.TabIndex = 6;
             pnlDrinks.Paint += pnlDrinks_Paint;
             // 
+            // radioButton4
+            // 
+            radioButton4.AutoSize = true;
+            radioButton4.Location = new System.Drawing.Point(910, 307);
+            radioButton4.Name = "radioButton4";
+            radioButton4.Size = new System.Drawing.Size(49, 24);
+            radioButton4.TabIndex = 10;
+            radioButton4.TabStop = true;
+            radioButton4.Text = "Q4";
+            radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new System.Drawing.Point(910, 277);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new System.Drawing.Size(49, 24);
+            radioButton3.TabIndex = 9;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "Q3";
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new System.Drawing.Point(910, 247);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new System.Drawing.Size(49, 24);
+            radioButton2.TabIndex = 8;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Q2";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new System.Drawing.Point(910, 217);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new System.Drawing.Size(49, 24);
+            radioButton1.TabIndex = 7;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Q1";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
             // txtQuarter
             // 
             txtQuarter.AutoSize = true;
-            txtQuarter.Location = new System.Drawing.Point(899, 235);
+            txtQuarter.Location = new System.Drawing.Point(905, 194);
             txtQuarter.Name = "txtQuarter";
             txtQuarter.Size = new System.Drawing.Size(62, 20);
             txtQuarter.TabIndex = 5;
@@ -358,7 +402,7 @@ namespace SomerenUI
             // 
             // txtbxYear
             // 
-            txtbxYear.Location = new System.Drawing.Point(904, 201);
+            txtbxYear.Location = new System.Drawing.Point(910, 160);
             txtbxYear.Name = "txtbxYear";
             txtbxYear.Size = new System.Drawing.Size(125, 27);
             txtbxYear.TabIndex = 4;
@@ -366,7 +410,7 @@ namespace SomerenUI
             // txtYear
             // 
             txtYear.AutoSize = true;
-            txtYear.Location = new System.Drawing.Point(899, 176);
+            txtYear.Location = new System.Drawing.Point(905, 135);
             txtYear.Name = "txtYear";
             txtYear.Size = new System.Drawing.Size(40, 20);
             txtYear.TabIndex = 3;
@@ -378,7 +422,7 @@ namespace SomerenUI
             pictureBox5.Location = new System.Drawing.Point(920, 0);
             pictureBox5.Margin = new Padding(3, 4, 3, 4);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new System.Drawing.Size(149, 164);
+            pictureBox5.Size = new System.Drawing.Size(149, 126);
             pictureBox5.TabIndex = 2;
             pictureBox5.TabStop = false;
             // 
@@ -548,55 +592,11 @@ namespace SomerenUI
             label4.TabIndex = 0;
             label4.Text = "Rooms";
             // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new System.Drawing.Point(904, 258);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new System.Drawing.Size(49, 24);
-            radioButton1.TabIndex = 7;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Q1";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new System.Drawing.Point(904, 288);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new System.Drawing.Size(49, 24);
-            radioButton2.TabIndex = 8;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Q2";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new System.Drawing.Point(904, 318);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new System.Drawing.Size(49, 24);
-            radioButton3.TabIndex = 9;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Q3";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new System.Drawing.Point(904, 348);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new System.Drawing.Size(49, 24);
-            radioButton4.TabIndex = 10;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "Q4";
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
             // SomerenUI
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1098, 673);
+            ClientSize = new System.Drawing.Size(1100, 673);
             Controls.Add(pnlRooms);
             Controls.Add(pnlActivities);
             Controls.Add(pnlDrinks);
