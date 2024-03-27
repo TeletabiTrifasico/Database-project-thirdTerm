@@ -18,6 +18,9 @@ namespace SomerenDAL
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }
+
+
+    
         private List<Drink> ReadTables(DataTable dataTable)
         {
             List<Drink> drinks = new List<Drink>();

@@ -3,6 +3,8 @@ using SomerenModel;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System;
+using System.Drawing;
+using Microsoft.Data.SqlClient;
 
 namespace SomerenUI
 {
@@ -129,6 +131,7 @@ namespace SomerenUI
             }
         }
 
+      
 
         private List<Room> GetRooms()
         {
@@ -318,16 +321,60 @@ namespace SomerenUI
         {
 
         }
-        private void pnlRooms_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-        private void pnlRooms_Paint_1(object sender, PaintEventArgs e)
+        private void listViewDrinks_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listViewDrinks.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listViewDrinks.SelectedItems[0];
+                string DrinkName = selectedItem.SubItems[1].Text; // Assuming product ID is in the first column
+                string DrinkPrice = selectedItem.SubItems[3].Text; // Assuming description is in the second column
 
+
+                // Now you can pass this data to a text box or another control
+                textBoxDrinkName.Text = DrinkName;
+                textBoxPrice.Text = DrinkPrice;
+                TotalAmount.Text = ($"€{DrinkPrice}.00");
+            }
         }
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                string firstName = selectedItem.SubItems[0].Text; // Assuming product ID is in the first column
+                string lastName = selectedItem.SubItems[1].Text; // Assuming description is in the second column
+
+                // Now you can pass this data to a text box or another control
+                studentName.Text = ($"{firstName} {lastName}");
+            }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            ListViewItem selectedItem = listViewDrinks.SelectedItems[0];
+            string subitem = selectedItem.SubItems[3].Text;
+
+            int DrinkPrice = int.Parse(subitem);  // Assuming description is in the second column
+            int quantity = ((int)numericUpDown1.Value);
+
+            double totalAmount = quantity * DrinkPrice;
+
+            // Display the total amount in the TextBox
+            TotalAmount.Text = totalAmount.ToString("€0.00"); // Format as currency
+        }
+
+        private void btnPlaceOrder_Click(object sender, EventArgs e)
+        {
+            
+          
+
+          
+
+         
+
+            
         }
     }
 }

@@ -63,10 +63,14 @@ namespace SomerenUI
             columnHeader11 = new ColumnHeader();
             label2 = new Label();
             pnlDrinks = new Panel();
+            textBoxPrice = new TextBox();
+            textBoxDrinkName = new TextBox();
+            TotalAmount = new Label();
             label7 = new Label();
+            label8 = new Label();
+            studentName = new Label();
             numericUpDown1 = new NumericUpDown();
             txtQuantity = new Label();
-            textBox1 = new TextBox();
             txtPrice = new Label();
             btnPlaceOrder = new Button();
             listView1 = new ListView();
@@ -77,13 +81,6 @@ namespace SomerenUI
             columnHeader32 = new ColumnHeader();
             columnHeader33 = new ColumnHeader();
             label6 = new Label();
-            radioButton4 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
-            txtQuarter = new Label();
-            txtbxYear = new TextBox();
-            txtYear = new Label();
             pictureBox5 = new PictureBox();
             listViewDrinks = new ListView();
             columnHeader21 = new ColumnHeader();
@@ -345,21 +342,18 @@ namespace SomerenUI
             // 
             // pnlDrinks
             // 
+            pnlDrinks.Controls.Add(textBoxPrice);
+            pnlDrinks.Controls.Add(textBoxDrinkName);
+            pnlDrinks.Controls.Add(TotalAmount);
             pnlDrinks.Controls.Add(label7);
+            pnlDrinks.Controls.Add(label8);
+            pnlDrinks.Controls.Add(studentName);
             pnlDrinks.Controls.Add(numericUpDown1);
             pnlDrinks.Controls.Add(txtQuantity);
-            pnlDrinks.Controls.Add(textBox1);
             pnlDrinks.Controls.Add(txtPrice);
             pnlDrinks.Controls.Add(btnPlaceOrder);
             pnlDrinks.Controls.Add(listView1);
             pnlDrinks.Controls.Add(label6);
-            pnlDrinks.Controls.Add(radioButton4);
-            pnlDrinks.Controls.Add(radioButton3);
-            pnlDrinks.Controls.Add(radioButton2);
-            pnlDrinks.Controls.Add(radioButton1);
-            pnlDrinks.Controls.Add(txtQuarter);
-            pnlDrinks.Controls.Add(txtbxYear);
-            pnlDrinks.Controls.Add(txtYear);
             pnlDrinks.Controls.Add(pictureBox5);
             pnlDrinks.Controls.Add(listViewDrinks);
             pnlDrinks.Controls.Add(label5);
@@ -370,42 +364,77 @@ namespace SomerenUI
             pnlDrinks.TabIndex = 6;
             pnlDrinks.Paint += pnlDrinks_Paint;
             // 
+            // textBoxPrice
+            // 
+            textBoxPrice.Location = new System.Drawing.Point(667, 81);
+            textBoxPrice.Name = "textBoxPrice";
+            textBoxPrice.Size = new System.Drawing.Size(125, 27);
+            textBoxPrice.TabIndex = 26;
+            // 
+            // textBoxDrinkName
+            // 
+            textBoxDrinkName.Location = new System.Drawing.Point(511, 79);
+            textBoxDrinkName.Name = "textBoxDrinkName";
+            textBoxDrinkName.Size = new System.Drawing.Size(125, 27);
+            textBoxDrinkName.TabIndex = 25;
+            // 
+            // TotalAmount
+            // 
+            TotalAmount.AutoSize = true;
+            TotalAmount.Location = new System.Drawing.Point(695, 194);
+            TotalAmount.Name = "TotalAmount";
+            TotalAmount.Size = new System.Drawing.Size(17, 20);
+            TotalAmount.TabIndex = 24;
+            TotalAmount.Text = "€";
+            // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(528, 351);
+            label7.Location = new System.Drawing.Point(644, 194);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(101, 20);
-            label7.TabIndex = 18;
-            label7.Text = "Student name";
+            label7.Size = new System.Drawing.Size(45, 20);
+            label7.TabIndex = 23;
+            label7.Text = "Total:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new System.Drawing.Point(510, 56);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(88, 20);
+            label8.TabIndex = 20;
+            label8.Text = "Drink Name";
+            // 
+            // studentName
+            // 
+            studentName.AutoSize = true;
+            studentName.Location = new System.Drawing.Point(678, 142);
+            studentName.Name = "studentName";
+            studentName.Size = new System.Drawing.Size(104, 20);
+            studentName.TabIndex = 18;
+            studentName.Text = "Student Name";
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new System.Drawing.Point(520, 147);
+            numericUpDown1.Location = new System.Drawing.Point(511, 140);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new System.Drawing.Size(150, 27);
             numericUpDown1.TabIndex = 17;
+            numericUpDown1.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // txtQuantity
             // 
             txtQuantity.AutoSize = true;
-            txtQuantity.Location = new System.Drawing.Point(520, 124);
+            txtQuantity.Location = new System.Drawing.Point(510, 117);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new System.Drawing.Size(65, 20);
             txtQuantity.TabIndex = 16;
             txtQuantity.Text = "Quantity";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new System.Drawing.Point(520, 79);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(125, 27);
-            textBox1.TabIndex = 15;
-            // 
             // txtPrice
             // 
             txtPrice.AutoSize = true;
-            txtPrice.Location = new System.Drawing.Point(520, 56);
+            txtPrice.Location = new System.Drawing.Point(678, 58);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new System.Drawing.Size(41, 20);
             txtPrice.TabIndex = 14;
@@ -413,12 +442,13 @@ namespace SomerenUI
             // 
             // btnPlaceOrder
             // 
-            btnPlaceOrder.Location = new System.Drawing.Point(520, 425);
+            btnPlaceOrder.Location = new System.Drawing.Point(612, 242);
             btnPlaceOrder.Name = "btnPlaceOrder";
             btnPlaceOrder.Size = new System.Drawing.Size(127, 29);
             btnPlaceOrder.TabIndex = 13;
-            btnPlaceOrder.Text = "Place order";
+            btnPlaceOrder.Text = "Place Order";
             btnPlaceOrder.UseVisualStyleBackColor = true;
+            btnPlaceOrder.Click += btnPlaceOrder_Click;
             // 
             // listView1
             // 
@@ -434,26 +464,32 @@ namespace SomerenUI
             // columnHeader28
             // 
             columnHeader28.Text = "First name";
+            columnHeader28.Width = 80;
             // 
             // columnHeader29
             // 
             columnHeader29.Text = "Last name";
+            columnHeader29.Width = 80;
             // 
             // columnHeader30
             // 
             columnHeader30.Text = "Sutent number";
+            columnHeader30.Width = 80;
             // 
             // columnHeader31
             // 
             columnHeader31.Text = "Nationality";
+            columnHeader31.Width = 80;
             // 
             // columnHeader32
             // 
             columnHeader32.Text = "Phone number";
+            columnHeader32.Width = 80;
             // 
             // columnHeader33
             // 
             columnHeader33.Text = "Class";
+            columnHeader33.Width = 80;
             // 
             // label6
             // 
@@ -464,75 +500,6 @@ namespace SomerenUI
             label6.Size = new System.Drawing.Size(134, 41);
             label6.TabIndex = 11;
             label6.Text = "Students";
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new System.Drawing.Point(910, 307);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new System.Drawing.Size(49, 24);
-            radioButton4.TabIndex = 10;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "Q4";
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new System.Drawing.Point(910, 277);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new System.Drawing.Size(49, 24);
-            radioButton3.TabIndex = 9;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Q3";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new System.Drawing.Point(910, 247);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new System.Drawing.Size(49, 24);
-            radioButton2.TabIndex = 8;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Q2";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new System.Drawing.Point(910, 217);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new System.Drawing.Size(49, 24);
-            radioButton1.TabIndex = 7;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Q1";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // txtQuarter
-            // 
-            txtQuarter.AutoSize = true;
-            txtQuarter.Location = new System.Drawing.Point(905, 194);
-            txtQuarter.Name = "txtQuarter";
-            txtQuarter.Size = new System.Drawing.Size(62, 20);
-            txtQuarter.TabIndex = 5;
-            txtQuarter.Text = "Quarter:";
-            // 
-            // txtbxYear
-            // 
-            txtbxYear.Location = new System.Drawing.Point(910, 160);
-            txtbxYear.Name = "txtbxYear";
-            txtbxYear.Size = new System.Drawing.Size(125, 27);
-            txtbxYear.TabIndex = 4;
-            // 
-            // txtYear
-            // 
-            txtYear.AutoSize = true;
-            txtYear.Location = new System.Drawing.Point(905, 135);
-            txtYear.Name = "txtYear";
-            txtYear.Size = new System.Drawing.Size(40, 20);
-            txtYear.TabIndex = 3;
-            txtYear.Text = "Year:";
             // 
             // pictureBox5
             // 
@@ -555,6 +522,7 @@ namespace SomerenUI
             listViewDrinks.TabIndex = 1;
             listViewDrinks.UseCompatibleStateImageBehavior = false;
             listViewDrinks.View = View.Details;
+            listViewDrinks.SelectedIndexChanged += listViewDrinks_SelectedIndexChanged;
             // 
             // columnHeader21
             // 
@@ -662,7 +630,6 @@ namespace SomerenUI
             pnlRooms.Name = "pnlRooms";
             pnlRooms.Size = new System.Drawing.Size(1072, 621);
             pnlRooms.TabIndex = 5;
-            pnlRooms.Paint += pnlRooms_Paint_1;
             // 
             // pictureBox4
             // 
@@ -811,13 +778,6 @@ namespace SomerenUI
         private ColumnHeader columnHeader26;
         private Label label5;
         private ColumnHeader columnHeader27;
-        private Label txtQuarter;
-        private TextBox txtbxYear;
-        private Label txtYear;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
         private ListView listView1;
         private Label label6;
         private ColumnHeader columnHeader28;
@@ -828,9 +788,13 @@ namespace SomerenUI
         private ColumnHeader columnHeader33;
         private Label txtPrice;
         private Button btnPlaceOrder;
-        private TextBox textBox1;
-        private Label label7;
+        private Label studentName;
         private NumericUpDown numericUpDown1;
         private Label txtQuantity;
+        private Label label8;
+        private Label label7;
+        private Label TotalAmount;
+        private TextBox textBoxPrice;
+        private TextBox textBoxDrinkName;
     }
 }
