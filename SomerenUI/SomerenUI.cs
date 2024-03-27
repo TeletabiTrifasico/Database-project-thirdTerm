@@ -1,8 +1,10 @@
-using SomerenService;
+﻿using SomerenService;
 using SomerenModel;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System;
+using SomerenDAL;
+using System.Linq;
 
 namespace SomerenUI
 {
@@ -311,5 +313,74 @@ namespace SomerenUI
 
         private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e) { }
         private void toolStripMenuItem1_Click(object sender, EventArgs e) { }
+
+        private void startdateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            startdateTimePicker.MaxDate = DateTime.Today;
+        }
+
+        private void enddateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            enddateTimePicker.MaxDate = DateTime.Today;
+        }
+
+        public bool IsValidDateWindow(DateTime startDate, DateTime endDate)
+        {
+            DateTime today = DateTime.Today;
+
+            if (startDate > today || endDate > today || startDate > endDate)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void GenerateRevenueReportButton_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = startdateTimePicker.Value;
+            DateTime endDate = enddateTimePicker.Value;
+
+            try
+            {
+                RevenueReport report = GenerateRevenueReport(startDate, endDate);
+                ShowRevenueReport(report);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private RevenueReport GenerateRevenueReport(DateTime startDate, DateTime endDate)
+        {
+            RevenueReportDao dao = new RevenueReportDao();
+
+            List<Drink> drinksSold = dao.GetDrinksSoldByDate(startDate, endDate);
+
+
+            int totalDrinksSold = drinksSold.Sum(d => d.Sold);
+            float turnover = drinksSold.Sum(d => d.Price * d.Sold);
+
+
+            // Oluşturulan raporu döndür
+            return new RevenueReport
+            {
+                TotalDrinksSold = totalDrinksSold,
+                Turnover = turnover,
+                //NumberOfCustomers = numberOfCustomers
+            };
+        }
+
+        private void ShowRevenueReport(RevenueReport report)
+        {
+            string message = $"Total Drinks Sold: {report.TotalDrinksSold}\n" +
+                             $"Turnover: {report.Turnover}\n" +
+                             $"Number of Customers: {report.NumberOfCustomers}";
+
+            revenueReporttextBox.Text = message;
+        }
+
+        
     }
 }

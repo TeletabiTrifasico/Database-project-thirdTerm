@@ -17,6 +17,7 @@ namespace SomerenModel
 
         public string StockAmount { get; set; }
 
+        public int Sold { get; set; }
 
 
     }
