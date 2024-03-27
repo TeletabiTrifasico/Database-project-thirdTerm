@@ -23,14 +23,14 @@ namespace SomerenUI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-           
-            string drinkName=textBoxDrinkName.Text;
-            bool isAlcoholic=checkBoxAlcoholic.Checked;
-            float price=float.Parse(textBoxPrice.Text);
-            string drinkType=comboBoxType.SelectedItem.ToString();
-            string stockAmount=textBoxStockAmount.Text;
-            int sold=int.Parse(textBoxSold.Text);
-           
+
+            string drinkName = textBoxDrinkName.Text;
+            bool isAlcoholic = radioButtonAlcoholic.Checked;
+            float price = float.Parse(textBoxPrice.Text);
+            string drinkType = comboBoxType.SelectedItem.ToString();
+            string stockAmount = textBoxStockAmount.Text;
+            int sold = int.Parse(textBoxSold.Text);
+
             Drink newDrink = new Drink
             {
                 DrinkName = drinkName,
@@ -38,17 +38,17 @@ namespace SomerenUI
                 Price = price,
                 DrinkType = drinkType,
                 StockAmount = stockAmount,
-                Sold=sold
+                Sold = sold
             };
-         
+
 
             try
             {
-               
+
                 DrinkService drinkService = new DrinkService();
                 drinkService.AddDrink(newDrink);
                 MessageBox.Show("Drink added successfully!");
-                
+
 
 
             }

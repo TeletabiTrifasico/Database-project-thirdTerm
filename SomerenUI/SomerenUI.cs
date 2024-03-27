@@ -309,19 +309,16 @@ namespace SomerenUI
             int stockAmount = int.Parse(drink.StockAmount);
             string stockstatus = "";
 
-            if (stockAmount == 0)
+            if (stockAmount <= 0)
             {
-                //listItem.BackColor = Color.Red;
                 stockstatus = "Stock Empty";
             }
-            else if (stockAmount > 10 && stockAmount < 20)
+            else if (stockAmount < 20)
             {
-                //listItem.BackColor = Color.Yellow;
                 stockstatus = "Stock Nearly Depleted";
             }
-            else if (stockAmount >= 20)
+            else 
             {
-                //listItem.BackColor = Color.Green;
                 stockstatus = "Stock Sufficient";
             }
             listItem.SubItems.Add(stockstatus);

@@ -37,12 +37,12 @@
             textBoxDrinkName = new System.Windows.Forms.TextBox();
             textBoxPrice = new System.Windows.Forms.TextBox();
             textBoxStockAmount = new System.Windows.Forms.TextBox();
-            checkBoxAlcoholic = new System.Windows.Forms.CheckBox();
-            checkBoxNonAlcoholic = new System.Windows.Forms.CheckBox();
             comboBoxType = new System.Windows.Forms.ComboBox();
             buttonSave = new System.Windows.Forms.Button();
             textBoxSold = new System.Windows.Forms.TextBox();
             label7 = new System.Windows.Forms.Label();
+            radioButtonAlcoholic = new System.Windows.Forms.RadioButton();
+            radioButtonNonAlcoholic = new System.Windows.Forms.RadioButton();
             SuspendLayout();
             // 
             // label1
@@ -119,30 +119,10 @@
             textBoxStockAmount.Size = new System.Drawing.Size(209, 39);
             textBoxStockAmount.TabIndex = 8;
             // 
-            // checkBoxAlcoholic
-            // 
-            checkBoxAlcoholic.AutoSize = true;
-            checkBoxAlcoholic.Location = new System.Drawing.Point(350, 142);
-            checkBoxAlcoholic.Name = "checkBoxAlcoholic";
-            checkBoxAlcoholic.Size = new System.Drawing.Size(143, 36);
-            checkBoxAlcoholic.TabIndex = 9;
-            checkBoxAlcoholic.Text = "Alcoholic";
-            checkBoxAlcoholic.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxNonAlcoholic
-            // 
-            checkBoxNonAlcoholic.AutoSize = true;
-            checkBoxNonAlcoholic.Location = new System.Drawing.Point(563, 142);
-            checkBoxNonAlcoholic.Name = "checkBoxNonAlcoholic";
-            checkBoxNonAlcoholic.Size = new System.Drawing.Size(189, 36);
-            checkBoxNonAlcoholic.TabIndex = 10;
-            checkBoxNonAlcoholic.Text = "NonAlcoholic";
-            checkBoxNonAlcoholic.UseVisualStyleBackColor = true;
-            // 
             // comboBoxType
             // 
             comboBoxType.FormattingEnabled = true;
-            comboBoxType.Items.AddRange(new object[] { "BEER ", "SPARKLING ", "FRUIT JUICE ", "WINE " });
+            comboBoxType.Items.AddRange(new object[] { "Beer", "Wine", "Water", "Tea", "Coffee", "Sparkling", "Juice", "Other" });
             comboBoxType.Location = new System.Drawing.Point(341, 337);
             comboBoxType.Name = "comboBoxType";
             comboBoxType.Size = new System.Drawing.Size(209, 40);
@@ -174,17 +154,39 @@
             label7.TabIndex = 14;
             label7.Text = "Enter Sold";
             // 
+            // radioButtonAlcoholic
+            // 
+            radioButtonAlcoholic.AutoSize = true;
+            radioButtonAlcoholic.Location = new System.Drawing.Point(341, 142);
+            radioButtonAlcoholic.Name = "radioButtonAlcoholic";
+            radioButtonAlcoholic.Size = new System.Drawing.Size(142, 36);
+            radioButtonAlcoholic.TabIndex = 15;
+            radioButtonAlcoholic.TabStop = true;
+            radioButtonAlcoholic.Text = "Alcoholic";
+            radioButtonAlcoholic.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNonAlcoholic
+            // 
+            radioButtonNonAlcoholic.AutoSize = true;
+            radioButtonNonAlcoholic.Location = new System.Drawing.Point(587, 142);
+            radioButtonNonAlcoholic.Name = "radioButtonNonAlcoholic";
+            radioButtonNonAlcoholic.Size = new System.Drawing.Size(188, 36);
+            radioButtonNonAlcoholic.TabIndex = 16;
+            radioButtonNonAlcoholic.TabStop = true;
+            radioButtonNonAlcoholic.Text = "NonAlcoholic";
+            radioButtonNonAlcoholic.UseVisualStyleBackColor = true;
+            // 
             // AddDrinkForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1103, 638);
+            Controls.Add(radioButtonNonAlcoholic);
+            Controls.Add(radioButtonAlcoholic);
             Controls.Add(label7);
             Controls.Add(textBoxSold);
             Controls.Add(buttonSave);
             Controls.Add(comboBoxType);
-            Controls.Add(checkBoxNonAlcoholic);
-            Controls.Add(checkBoxAlcoholic);
             Controls.Add(textBoxStockAmount);
             Controls.Add(textBoxPrice);
             Controls.Add(textBoxDrinkName);
@@ -211,11 +213,11 @@
         private System.Windows.Forms.TextBox textBoxDrinkName;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.TextBox textBoxStockAmount;
-        private System.Windows.Forms.CheckBox checkBoxAlcoholic;
-        private System.Windows.Forms.CheckBox checkBoxNonAlcoholic;
         private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TextBox textBoxSold;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton radioButtonAlcoholic;
+        private System.Windows.Forms.RadioButton radioButtonNonAlcoholic;
     }
 }

@@ -107,7 +107,7 @@
             // comboBoxNewType
             // 
             comboBoxNewType.FormattingEnabled = true;
-            comboBoxNewType.Items.AddRange(new object[] { "Beer", "Sparkling", "Tea", "Water", "Wine" });
+            comboBoxNewType.Items.AddRange(new object[] { "Beer", "Wine", "Water", "Tea", "Coffee", "Sparkling", "Juice", "Other" });
             comboBoxNewType.Location = new System.Drawing.Point(571, 388);
             comboBoxNewType.Name = "comboBoxNewType";
             comboBoxNewType.Size = new System.Drawing.Size(242, 40);
