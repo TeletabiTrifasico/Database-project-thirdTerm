@@ -3,6 +3,7 @@ using SomerenModel;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System;
+using System.Drawing;
 
 namespace SomerenUI
 {
@@ -56,6 +57,7 @@ namespace SomerenUI
             pnlActivities.Hide();
             pnlRooms.Hide();
             pnlStudents.Hide();
+            pnlDrinkSupplies.Hide();
 
             // show drinks
             pnlDrinks.Show();
@@ -71,6 +73,31 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
             }
         }
+        private void ShowDrinkSuppliesPanel()
+        {
+            // hide all other panels
+            pnlDashboard.Hide();
+            pnlLecturers.Hide();
+            pnlActivities.Hide();
+            pnlRooms.Hide();
+            pnlStudents.Hide();
+            pnlDrinks.Hide();
+
+            // show drink supplies panel
+            pnlDrinkSupplies.Show();
+
+            try
+            {
+                // get and display all drink supplies
+                List<Drink> drinkSupplies = GetDrinkSupplies();
+                DisplayDrinkSupplies(drinkSupplies);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Something went wrong while loading the drink supplies: " + e.Message);
+            }
+        }
+
         private void ShowActivitiesPanel()
         {
             // hide all other panels
@@ -79,7 +106,7 @@ namespace SomerenUI
             pnlStudents.Hide();
             pnlRooms.Hide();
             pnlDrinks.Hide();
-
+            pnlDrinkSupplies.Hide();
             // show activities
             pnlActivities.Show();
 
@@ -102,6 +129,7 @@ namespace SomerenUI
             pnlActivities.Hide();
             pnlStudents.Hide();
             pnlDrinks.Hide();
+            pnlDrinkSupplies.Hide();
 
             // show rooms
             pnlRooms.Show();
@@ -125,6 +153,7 @@ namespace SomerenUI
             pnlActivities.Hide();
             pnlStudents.Hide();
             pnlDrinks.Hide();
+            pnlDrinkSupplies.Hide();
 
             // show lecturers
             pnlLecturers.Show();
@@ -262,14 +291,71 @@ namespace SomerenUI
                 ListViewItem list = new ListViewItem(drink.DrinkId.ToString());
 
                 list.Tag = drink;
-                list.SubItems.Add(drink.DrinkId.ToString());
                 list.SubItems.Add(drink.DrinkName);
-                list.SubItems.Add(drink.IsAlcoholic.ToString());
+                list.SubItems.Add(drink.IsAlcoholic?"Yes":"No");
                 list.SubItems.Add(drink.Price.ToString());
                 list.SubItems.Add(drink.DrinkType);
                 list.SubItems.Add(drink.StockAmount);
+                list.SubItems.Add(drink.Sold.ToString());
 
                 listViewDrinks.Items.Add(list);
+            }
+        }
+
+
+        //check stock status according to stockamount
+        private void CheckStockStatus(Drink drink, ListViewItem listItem)
+        {
+            int stockAmount = int.Parse(drink.StockAmount);
+            string stockstatus = "";
+
+            if (stockAmount == 0)
+            {
+                //listItem.BackColor = Color.Red;
+                stockstatus = "Stock Empty";
+            }
+            else if (stockAmount > 10 && stockAmount < 20)
+            {
+                //listItem.BackColor = Color.Yellow;
+                stockstatus = "Stock Nearly Depleted";
+            }
+            else if (stockAmount >= 20)
+            {
+                //listItem.BackColor = Color.Green;
+                stockstatus = "Stock Sufficient";
+            }
+            listItem.SubItems.Add(stockstatus);
+        }
+
+        private List<Drink> GetDrinkSupplies()
+        {
+
+            DrinkService drinkService = new DrinkService();
+            List<Drink> drinkSupplies = drinkService.GetDrinkSupplies();
+            return drinkSupplies;
+        }
+
+        private void DisplayDrinkSupplies(List<Drink> drinkSupplies)
+        {
+            // clear the listview before filling it
+            listViewDrinkSupplies.Items.Clear();
+
+            foreach (Drink drink in drinkSupplies)
+            {
+                // Create a ListViewItem for each drink 
+                ListViewItem listItem = new ListViewItem(drink.DrinkName.ToString());
+                listItem.SubItems.Add(drink.DrinkId.ToString());
+                listItem.SubItems.Add(drink.IsAlcoholic ? "Yes" : "No");
+                listItem.SubItems.Add(drink.Price.ToString());
+                listItem.SubItems.Add(drink.DrinkType);
+                listItem.SubItems.Add(drink.Sold.ToString());
+                listItem.Tag = drink;
+
+                // Check stock status 
+                CheckStockStatus(drink, listItem);
+
+                // Add the ListViewItem to the ListView
+                listViewDrinkSupplies.Items.Add(listItem);
             }
         }
 
@@ -311,5 +397,61 @@ namespace SomerenUI
 
         private void listViewStudents_SelectedIndexChanged(object sender, EventArgs e) { }
         private void toolStripMenuItem1_Click(object sender, EventArgs e) { }
+
+        private void drinkSuppliesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowDrinkSuppliesPanel();
+        }
+
+        private void btnAddDrink_Click(object sender, EventArgs e)
+        {
+            AddDrinkForm addDrinkForm = new AddDrinkForm();
+            addDrinkForm.ShowDialog();
+            List<Drink> drinks = GetDrinkSupplies();
+            DisplayDrinkSupplies(drinks);
+        }
+        private void btnUpdateDrink_Click(object sender, EventArgs e)
+        {
+            if (listViewDrinkSupplies.SelectedItems.Count==1)
+            {
+                Drink selectedDrink = (Drink)listViewDrinkSupplies.SelectedItems[0].Tag;
+                UpdateDrinkForm updateDrinkForm = new UpdateDrinkForm(selectedDrink);
+                updateDrinkForm.ShowDialog();
+                List<Drink> drinks = GetDrinkSupplies();
+                DisplayDrinkSupplies(drinks);
+            }
+            else
+            {
+                MessageBox.Show("Please select a drink to update.");
+            }
+
+        }
+
+        private void btnDeleteDrink_Click(object sender, EventArgs e)
+        {
+            if (listViewDrinkSupplies.SelectedItems.Count == 1)
+            {
+                Drink selectedDrink = (Drink)listViewDrinkSupplies.SelectedItems[0].Tag; 
+                int drinkId = selectedDrink.DrinkId; 
+                try
+                {
+                    DrinkService drinkService = new DrinkService();
+                    drinkService.DeleteDrink(selectedDrink); 
+                    MessageBox.Show("Drink deleted successfully.");
+                    List<Drink> drinks = GetDrinkSupplies();
+                    DisplayDrinkSupplies(drinks); // Refresh the list
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while deleting the drink: " + ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a drink to delete.");
+            }
+        }
     }
+
 }
+
