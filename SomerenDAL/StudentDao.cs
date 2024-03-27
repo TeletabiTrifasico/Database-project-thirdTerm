@@ -11,7 +11,7 @@ namespace SomerenDAL
     {
         public List<Student> GetAllStudents()
         {
-            string query = "SELECT * FROM [student]";
+            string query = "SELECT student_number, first_name, last_name, class, phone_number, nationality, roomID FROM [student]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }

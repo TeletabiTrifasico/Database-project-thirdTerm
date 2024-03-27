@@ -742,12 +742,12 @@ namespace SomerenUI
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1100, 673);
             Controls.Add(menuStrip1);
-            Controls.Add(pnlActivities);
             Controls.Add(pnlDrinks);
             Controls.Add(pnlLecturers);
             Controls.Add(pnlStudents);
             Controls.Add(pnlDashboard);
             Controls.Add(pnlRooms);
+            Controls.Add(pnlActivities);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "SomerenUI";

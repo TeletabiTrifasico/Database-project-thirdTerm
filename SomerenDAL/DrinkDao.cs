@@ -14,7 +14,7 @@ namespace SomerenDAL
     {
         public List<Drink> GetAllDrinks()
         {
-            string query = "SELECT drink_ID, drink_name, isAlcoholic, price,drink_type,stock_amount  FROM [drink]";
+            string query = "SELECT drink_ID, drink_name, isAlcoholic, price, drink_type, stock_amount  FROM [drink]";
             SqlParameter[] sqlParameters = new SqlParameter[0];
             return ReadTables(ExecuteSelectQuery(query, sqlParameters));
         }

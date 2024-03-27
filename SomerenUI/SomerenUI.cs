@@ -13,7 +13,8 @@ namespace SomerenUI
             InitializeComponent();
         }
 
-        private void HideAllPanels()
+        //Show panel method (hides all panes and only shows the one that has to be seen)
+        private void ShowPanel(Panel panel)
         {
             pnlStudents.Hide();
             pnlLecturers.Hide();
@@ -21,22 +22,20 @@ namespace SomerenUI
             pnlRooms.Hide();
             pnlDrinks.Hide();
             pnlDashboard.Hide();
+
+            panel.Show();
         }
+
+        //Shows panel dashboard
         private void ShowDashboardPanel()
         {
-            // hide all other panels
-            HideAllPanels();
-
-            // show dashboard
-            pnlDashboard.Show();
+            ShowPanel(pnlDashboard);
         }
+
+        //shows panel students
         private void ShowStudentsPanel()
         {
-            // hide all other panels
-            HideAllPanels();
-
-            // show students
-            pnlStudents.Show();
+            ShowPanel(pnlStudents);
 
             try
             {
@@ -49,13 +48,11 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the students: " + e.Message);
             }
         }
+
+        //shows panel drinks
         private void ShowDrinksPanel()
         {
-            // hide all other panels
-            HideAllPanels();
-
-            // show drinks
-            pnlDrinks.Show();
+            ShowPanel(pnlDrinks);
 
             try
             {
@@ -71,13 +68,11 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the drinks: " + e.Message);
             }
         }
+
+        //shows panel Activities
         private void ShowActivitiesPanel()
         {
-            // hide all other panels
-            HideAllPanels();
-
-            // show activities
-            pnlActivities.Show();
+            ShowPanel(pnlActivities);
 
             try
             {
@@ -90,13 +85,11 @@ namespace SomerenUI
                 MessageBox.Show("Something went wrong while loading the activities: " + e.Message);
             }
         }
+
+        //shows panel Rooms
         private void ShowRoomsPanel()
         {
-            // hide all other panels
-            HideAllPanels();
-
-            // show rooms
-            pnlRooms.Show();
+            ShowPanel(pnlRooms);
 
             try
             {
@@ -109,13 +102,11 @@ namespace SomerenUI
 
             }
         }
+
+        //shows panel Lecturers
         private void ShowLecturersPanel()
         {
-            // hide all other panels
-            HideAllPanels();
-
-            // show lecturers
-            pnlLecturers.Show();
+            ShowPanel(pnlLecturers);
 
             try
             {
@@ -129,7 +120,7 @@ namespace SomerenUI
             }
         }
 
-
+        //Gets and displays rooms into a ListView
         private List<Room> GetRooms()
         {
             RoomService roomService = new RoomService();
@@ -140,7 +131,6 @@ namespace SomerenUI
         private void DisplayRooms(List<Room> rooms)
         {
             // clear the listview before filling it
-
             listViewRooms.Items.Clear();
 
             foreach (Room room in rooms)
@@ -149,13 +139,13 @@ namespace SomerenUI
                 li.SubItems.Add(room.Number.ToString());
                 li.SubItems.Add(room.Size.ToString());
                 li.SubItems.Add(room.Type.ToString());
-                //Comment or something anywhere
                 li.Tag = room;   // link room object to listview item
                 listViewRooms.Items.Add(li);
 
             }
         }
 
+        //Gets and displays lecturers into a ListView
         private List<Lecturer> GetLecturers()
         {
             LecturerService lecturerService = new LecturerService();
@@ -181,6 +171,7 @@ namespace SomerenUI
 
         }
 
+        //Gets and displays students into a ListView
         private List<Student> GetStudents()
         {
             StudentService studentService = new StudentService();
@@ -224,6 +215,7 @@ namespace SomerenUI
             }
         }
 
+        //Gets and displays activities into a ListView
         private List<Activity> GetActivities()
         {
             ActivityService activityService = new ActivityService();
@@ -250,6 +242,7 @@ namespace SomerenUI
 
         }
 
+        //Gets and displays drinks into a ListView
         private List<Drink> GetDrinks()
         {
             DrinkService drinkService = new DrinkService();
