@@ -42,6 +42,10 @@
             textBoxNewSold = new System.Windows.Forms.TextBox();
             radioButtonAlcoholic = new System.Windows.Forms.RadioButton();
             radioButtonNonAlcoholic = new System.Windows.Forms.RadioButton();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // buttonUpdate
@@ -167,11 +171,67 @@
             radioButtonNonAlcoholic.Text = "Nonalcoholic";
             radioButtonNonAlcoholic.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.ForeColor = System.Drawing.Color.Red;
+            label1.Location = new System.Drawing.Point(451, 62);
+            label1.MaximumSize = new System.Drawing.Size(79, 79);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(77, 19);
+            label1.TabIndex = 47;
+            label1.Text = "(Required*)";
+            label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.ForeColor = System.Drawing.Color.Red;
+            label2.Location = new System.Drawing.Point(451, 267);
+            label2.MaximumSize = new System.Drawing.Size(79, 79);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(77, 19);
+            label2.TabIndex = 48;
+            label2.Text = "(Required*)";
+            label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.ForeColor = System.Drawing.Color.Red;
+            label4.Location = new System.Drawing.Point(451, 505);
+            label4.MaximumSize = new System.Drawing.Size(79, 79);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(77, 19);
+            label4.TabIndex = 50;
+            label4.Text = "(Required*)";
+            label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Segoe UI", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.ForeColor = System.Drawing.Color.Red;
+            label5.Location = new System.Drawing.Point(451, 604);
+            label5.MaximumSize = new System.Drawing.Size(79, 79);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(77, 19);
+            label5.TabIndex = 51;
+            label5.Text = "(Required*)";
+            label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // UpdateDrinkForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1394, 852);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(radioButtonNonAlcoholic);
             Controls.Add(radioButtonAlcoholic);
             Controls.Add(textBoxNewSold);
@@ -210,5 +270,8 @@
         private System.Windows.Forms.TextBox textBoxNewSold;
         private System.Windows.Forms.RadioButton radioButtonAlcoholic;
         private System.Windows.Forms.RadioButton radioButtonNonAlcoholic;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

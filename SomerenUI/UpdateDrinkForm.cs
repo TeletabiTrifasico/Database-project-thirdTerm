@@ -32,31 +32,39 @@ namespace SomerenUI
         //update drink details
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            
-            string newDrinkName = txtBoxNewDrinkName.Text;
-            bool newIsAlcoholic=radioButtonAlcoholic.Checked;
-            float newPrice = float.Parse(txtBoxNewPrice.Text);
-            string newDrinkType = comboBoxNewType.SelectedItem.ToString();
-            string newStockAmount = txtBoxNewStockAmount.Text;
-            int newSold = int.Parse(textBoxNewSold.Text);
-
-            drink.DrinkName = newDrinkName;
-            drink.IsAlcoholic = newIsAlcoholic;
-            drink.Price = newPrice;
-            drink.DrinkType = newDrinkType;
-            drink.StockAmount = newStockAmount;
-            drink.Sold = newSold;
-
-
-            try
+            if (string.IsNullOrEmpty(txtBoxNewDrinkName.Text) || string.IsNullOrEmpty(txtBoxNewPrice.Text) || string.IsNullOrEmpty(comboBoxNewType.Text) || string.IsNullOrEmpty(txtBoxNewStockAmount.Text) || string.IsNullOrEmpty(textBoxNewSold.Text))
             {
-                drinkService.UpdateDrink(drink);
-
-                MessageBox.Show("Drink updated successfully!");
+                MessageBox.Show("Please fill required informations.");
+                return;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("An error occurred: " + ex.Message);
+                string newDrinkName = txtBoxNewDrinkName.Text;
+                bool newIsAlcoholic = radioButtonAlcoholic.Checked;
+                float newPrice = float.Parse(txtBoxNewPrice.Text);
+                string newDrinkType = comboBoxNewType.SelectedItem.ToString();
+                string newStockAmount = txtBoxNewStockAmount.Text;
+                int newSold = int.Parse(textBoxNewSold.Text);
+
+                drink.DrinkName = newDrinkName;
+                drink.IsAlcoholic = newIsAlcoholic;
+                drink.Price = newPrice;
+                drink.DrinkType = newDrinkType;
+                drink.StockAmount = newStockAmount;
+                drink.Sold = newSold;
+
+
+                try
+                {
+                    drinkService.UpdateDrink(drink);
+
+                    MessageBox.Show("Drink updated successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+
             }
 
         }

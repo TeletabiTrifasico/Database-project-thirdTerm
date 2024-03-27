@@ -23,42 +23,49 @@ namespace SomerenUI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-
-            string drinkName = textBoxDrinkName.Text;
-            bool isAlcoholic = radioButtonAlcoholic.Checked;
-            float price = float.Parse(textBoxPrice.Text);
-            string drinkType = comboBoxType.SelectedItem.ToString();
-            string stockAmount = textBoxStockAmount.Text;
-            int sold = int.Parse(textBoxSold.Text);
-
-            Drink newDrink = new Drink
+            if (string.IsNullOrEmpty(textBoxDrinkName.Text) || string.IsNullOrEmpty(textBoxPrice.Text) || string.IsNullOrEmpty(comboBoxType.Text) || string.IsNullOrEmpty(textBoxStockAmount.Text) || string.IsNullOrEmpty(textBoxSold.Text))
             {
-                DrinkName = drinkName,
-                IsAlcoholic = isAlcoholic,
-                Price = price,
-                DrinkType = drinkType,
-                StockAmount = stockAmount,
-                Sold = sold
-            };
-
-
-            try
+                MessageBox.Show("Please fill required informations.");
+                return; 
+            }
+            else
             {
+                string drinkName = textBoxDrinkName.Text;
+                bool isAlcoholic = radioButtonAlcoholic.Checked;
+                float price = float.Parse(textBoxPrice.Text);
+                string drinkType = comboBoxType.SelectedItem.ToString();
+                string stockAmount = textBoxStockAmount.Text;
+                int sold = int.Parse(textBoxSold.Text);
 
-                DrinkService drinkService = new DrinkService();
-                drinkService.AddDrink(newDrink);
-                MessageBox.Show("Drink added successfully!");
+                Drink newDrink = new Drink
+                {
+                    DrinkName = drinkName,
+                    IsAlcoholic = isAlcoholic,
+                    Price = price,
+                    DrinkType = drinkType,
+                    StockAmount = stockAmount,
+                    Sold = sold
+                };
 
 
+                try
+                {
+
+                    DrinkService drinkService = new DrinkService();
+                    drinkService.AddDrink(newDrink);
+                    MessageBox.Show("Drink added successfully!");
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
 
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred: " + ex.Message);
-            }
 
-            // Close the form
-            this.Close();
+           
         }
 
     }
