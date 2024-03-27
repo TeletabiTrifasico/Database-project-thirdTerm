@@ -715,7 +715,7 @@ namespace SomerenUI
             // 
             // columnHeader18
             // 
-            columnHeader18.Text = "Foor number";
+            columnHeader18.Text = "Floor number";
             columnHeader18.Width = 100;
             // 
             // columnHeader19
